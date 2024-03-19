@@ -13,9 +13,11 @@
     "@fontsource-variable/gabarito": "^5.0.3",
     "@fontsource/bowlby-one-sc": "^5.0.19",
     "@fontsource/carter-one": "^5.0.8",
-    "astro": "^4.5.6"
+    "astro": "^4.5.6",
+    "astro-icon": "^1.1.0"
   },
   "devDependencies": {
+    "@iconify-json/mdi": "^1.1.64",
     "prettier": "^3.2.5",
     "prettier-plugin-astro": "^0.13.0"
   }

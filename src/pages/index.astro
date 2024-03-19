@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+import { Icon } from 'astro-icon/components';
 ---
 
 <Layout title="Welcome to MegaGym.">
@@ -35,6 +36,8 @@ import Card from '../components/Card.astro';
 		</svg>
 		<h1>Welcome to MegaGym</h1>
 		<p class="instructions">
+			<Icon name="mdi:information-variant-box-outline" size={40}/>
+
 			To get started, open the directory <code>src/pages</code> in your project.<br />
 			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
 		</p>
