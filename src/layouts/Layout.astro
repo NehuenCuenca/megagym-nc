@@ -1,14 +1,13 @@
 ---
-interface Props {
-	title: string;
-}
-
 const { title } = Astro.props;
 
 // Fonts
 import '@fontsource-variable/gabarito';
 import '@fontsource/carter-one';
 import '@fontsource/bowlby-one-sc';
+
+// Components
+import Navbar from '../components/Navbar.astro'
 ---
 
 <!doctype html>
@@ -22,6 +21,9 @@ import '@fontsource/bowlby-one-sc';
 		<title>{title}</title>
 	</head>
 	<body>
+		<header>
+			<Navbar />		
+		</header>
 		<slot />
 	</body>
 </html>
@@ -40,23 +42,34 @@ import '@fontsource/bowlby-one-sc';
 		--white: #FFFFFF;
 		--off-white: #D8D8D8;
 	}
+
+	/* RESETS */
+	*, *::before, *::after {
+		box-sizing: border-box;
+	}
+	
+	* {
+		margin: 0;
+	}
+
+	body {
+		line-height: 1.5;
+		-webkit-font-smoothing: antialiased;
+	}
+
+	img, picture, video, canvas, svg {
+		display: block;
+		max-width: 100%;
+	}
+
+	p {
+		overflow-wrap: break-word;
+	}
+
 	html {
 		font-family: var(--main-font, Arial);
 		background-image: url(../assets/background-light-mesh.png);
 		background-repeat: no-repeat;
 		background-size: cover;
-		/* background: var(--false-black); */
-		/* background-size: 224px; */
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
 	}
 </style>
