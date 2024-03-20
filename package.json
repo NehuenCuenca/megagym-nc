@@ -10,11 +10,16 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/react": "^3.1.0",
     "@fontsource-variable/gabarito": "^5.0.3",
     "@fontsource/bowlby-one-sc": "^5.0.19",
     "@fontsource/carter-one": "^5.0.8",
+    "@types/react": "^18.2.67",
+    "@types/react-dom": "^18.2.22",
     "astro": "^4.5.6",
-    "astro-icon": "^1.1.0"
+    "astro-icon": "^1.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@iconify-json/mdi": "^1.1.64",
