@@ -1,0 +1,46 @@
+.navbar {
+    position: relative;
+    top: 0;
+    padding: .5rem 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:rgba(249, 255, 6, .9);
+    box-shadow: 2px 2px 20px var(--black);
+}
+.navbar__logo-megagym{
+    filter: drop-shadow(10px 4px 10px rgba(0, 0, 0, 0.4));
+    cursor: pointer;
+}
+.hamburguer-menu{
+    background-color: transparent;
+    border: transparent;
+    padding: 0;
+    cursor: pointer;
+}
+.hamburguer-menu__icon{
+    filter: drop-shadow(8px 4px 10px rgba(0, 0, 0, 0.6));
+}
+
+
+.navbar__links-list{
+    position: fixed;
+    top: 6rem;
+    right: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1rem;
+    background-color: var(--false-black);
+    padding: 1rem;
+    border-radius: 6px;
+    border: 6px solid var(--secondary-yellow);
+}
+/* .navbar__link-item {} */
+
+.link {
+    text-decoration: none;
+    font: normal normal 600 1.4rem var(--main-font, Arial);
+    color: var(--main-yellow);
+}

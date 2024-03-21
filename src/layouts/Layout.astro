@@ -7,7 +7,7 @@ import '@fontsource/carter-one';
 import '@fontsource/bowlby-one-sc';
 
 // Components
-import Navbar from '../components/Navbar.astro'
+import Navbar from '../components/Navbar/Navbar.jsx'
 ---
 
 <!doctype html>
@@ -22,7 +22,7 @@ import Navbar from '../components/Navbar.astro'
 	</head>
 	<body>
 		<header>
-			<Navbar />		
+			<Navbar client:load/>
 		</header>
 		<slot />
 	</body>
@@ -65,11 +65,21 @@ import Navbar from '../components/Navbar.astro'
 	p {
 		overflow-wrap: break-word;
 	}
+	
+	ul,ol { 
+		list-style-type: none;
+		padding: 0
+	}
 
 	html {
 		font-family: var(--main-font, Arial);
 		background-image: url(../assets/backgrounds/background-light-mesh.png);
 		background-repeat: no-repeat;
 		background-size: cover;
+	}
+
+	header {
+		position: sticky;
+		top: 0;
 	}
 </style>
