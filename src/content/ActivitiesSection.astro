@@ -1,0 +1,103 @@
+---
+import { Image } from "astro:assets";
+import { Icon } from 'astro-icon/components';
+
+import musculacion from '../assets/members/curl-barra.webp'
+import functional from '../assets/members/peso-muerto.webp'
+import hiit from '../assets/members/hiit.webp'
+import hift from '../assets/members/hift.webp'
+---
+<section id="activities" class="activities-container">
+    <ul class="activities-list">
+        <li class="activity-item activity-item-left">
+            <div class="activity-item-header">
+                <Icon name="mdi:dumbbell" class="activity-item-header__icon"/>
+                <h3 class="activity-item-header__title">Musculacion</h3>
+            </div>
+            <Image src={musculacion} class="activity-item-image" alt="Hombre realizando curl de biceps con barra (musculacion)"/>
+        </li>
+        <li class="activity-item activity-item-right">
+            <div class="activity-item-header">
+                <Icon name="mdi:clipboard-list" class="activity-item-header__icon"/>
+                <h3 class="activity-item-header__title">Functional</h3>
+            </div>
+            <Image src={functional} class="activity-item-image" alt="Mujer realizando peso muerto con barra (functional)"/>
+        </li>
+        <li class="activity-item activity-item-left">
+            <div class="activity-item-header">
+                <Icon name="mdi:timer-alert" class="activity-item-header__icon"/>
+                <h3 class="activity-item-header__title">HIIT</h3>
+            </div>
+            <Image src={hiit} class="activity-item-image" alt="Hombre corriendo en la cinta (HIIT)"/>
+        </li>
+        <li class="activity-item activity-item-right">
+            <div class="activity-item-header">
+                <Icon name="mdi:gymnastics" class="activity-item-header__icon"/>
+                <h3 class="activity-item-header__title">HIFT</h3>
+            </div>
+            <Image src={hift} class="activity-item-image" alt="Hombre haciendo ejercicio aerobico (HIFT)"/>
+        </li>
+    </ul>
+</section>
+
+
+<style>
+
+.activities-list {
+    width: 100%;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+
+.activity-item-right { justify-self: end; }
+.activity-item-left { justify-self: start; }
+
+
+.activity-item-header { 
+    display: flex;
+    align-items: center;
+    gap: 0 .2rem;
+}
+.activity-item-header__icon {
+    width: 30px;
+    height: 30px;
+}
+.activity-item-header__title {
+    font: normal normal bold 1.5rem var(--main-font, Arial);
+}
+
+.activity-item-image { 
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    border-radius: 6px;
+    max-width: 60vw;
+    max-height: 50vh;
+    object-fit: cover;
+}
+
+@media (width >= 470px) {
+    .activities-list{
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+        align-items: center
+    }
+
+    .activity-item-right, .activity-item-left {
+        justify-self: center;
+    }
+
+    .activity-item-header__title { font-size: 1.5rem;}
+
+    .activity-item-image { 
+        max-width: 40vw;
+        max-height: 70vh;
+    }
+}
+@media (width >= 768px) {
+    .activity-item-image { 
+        max-width: 30vw;
+    }
+}
+</style>
