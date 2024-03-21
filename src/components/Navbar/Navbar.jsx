@@ -1,7 +1,7 @@
 import './Navbar.css'
 import { logoMegaGym } from '../../assets/logos/logos.js'
 import { hamburguerMenu, closeMenu } from '../../assets/svgs/svgs.js'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 const Navbar = () => {
     const [toggle, setToggle] = useState(false)
@@ -12,7 +12,9 @@ const Navbar = () => {
 
     return (
         <nav className="navbar">
-            <img src={logoMegaGym.src} className='navbar__logo-megagym' width={70} height={70} alt="Logo de MegaGym" loading='eager'/>
+            <a href="#home">
+                <img src={logoMegaGym.src} className='navbar__logo-megagym' width={70} height={70} alt="Logo de MegaGym" loading='eager'/>
+            </a>
             <button className="hamburguer-menu" onClick={handleToggle}>
                 <img src={
                     toggle 
@@ -24,7 +26,7 @@ const Navbar = () => {
                 toggle &&
                 <ul className='navbar__links-list'>
                     <li>
-                        <a className='link' onClick={handleToggle} href="#">Actividades</a>
+                        <a className='link' onClick={handleToggle} href="#activities">Actividades</a>
                     </li>
                     <li>
                         <a className='link' onClick={handleToggle} href="#">Staff</a>
