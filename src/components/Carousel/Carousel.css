@@ -5,30 +5,34 @@
 
 
 .carousel__image {
-    width: 80%;
+    width: 100%;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    border-radius: 6px;
 }
 
 .carousel__button {
     border: none;
     outline: none;
-    background: rgba(165, 165, 165, 0.7);
+    background: rgba(204, 204, 204, 0.7);
     cursor: pointer; 
     padding: 1em;
     display: flex;
+    font-size: 1.2rem;
 }
 
 .carousel__button_right {
     margin: auto 0 auto -1.2em;
-    font-weight: bold;
-    font-size: 1.3rem;
+    font-weight: bolder;
 }
 
 .carousel__button_left {
     z-index: 0;
     margin: auto -1.2em auto 0;
     font-weight: bold;
-    font-size: 1.3rem;
 }
 
-
+@media(width >= 768px){
+    .carousel__button {
+        font-size: 1.5rem;
+    }
+}
