@@ -29,7 +29,7 @@ const Navbar = () => {
                         <a className='link' onClick={handleToggle} href="#activities">Actividades</a>
                     </li>
                     <li>
-                        <a className='link' onClick={handleToggle} href="#">Staff</a>
+                        <a className='link' onClick={handleToggle} href="#staff">Staff</a>
                     </li>
                     <li>
                         <a className='link' onClick={handleToggle} href="#">Precios</a>
