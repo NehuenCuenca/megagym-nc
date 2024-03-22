@@ -1,0 +1,58 @@
+---
+
+import { Icon } from 'astro-icon/components';
+---
+<section>
+    <ul class="caracteristics-list">
+        <li class="caracteristics-list-item">
+            <Icon name="mdi:event-note" class="caracteristics-list-item__icon"/>
+            <h3 class="caracteristics-list-item__title">Personaliza tu rutina</h3>
+            <p class="caracteristics-list-item__paragraph">Sin cargo y a tu gusto pedí una rutina en la mesa de entrada.</p>
+        </li>
+        <li class="caracteristics-list-item">
+            <Icon name="mdi:chart-box" class="caracteristics-list-item__icon"/>
+            <h3 class="caracteristics-list-item__title">Registramos tu progreso</h3>
+            <p class="caracteristics-list-item__paragraph">Dependiendo tu objetivo, medimos tu masa muscular, peso y perdida de grasa.</p>
+        </li>
+        <li class="caracteristics-list-item">
+            <Icon name="mdi:human-greeting" class="caracteristics-list-item__icon"/>
+            <h3 class="caracteristics-list-item__title">Te damos una guía</h3>
+            <p class="caracteristics-list-item__paragraph">De ser necesario, podemos guiarte en tu alimentacion diara.</p>
+        </li>
+    </ul>
+</section>
+
+<style>
+.caracteristics-list{
+    background-color: var(--white);
+    width: 100%;
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-evenly;
+}
+
+.caracteristics-list-item{
+    flex-basis: clamp(250px, 30%, 500px);
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+    align-items: center;
+}
+
+.caracteristics-list-item__icon{
+    width: 50px;
+    height: 50px;
+    filter: drop-shadow(2px 2px 25px rgba(0, 0, 0, 0.6));
+}
+.caracteristics-list-item__title{
+    text-align: center;
+    font: normal normal 600 1.5rem var(--main-font, Arial);
+}
+.caracteristics-list-item__paragraph{
+    text-align: center;
+    font: normal normal 400 1.1rem var(--main-font, Arial);
+}
+</style>

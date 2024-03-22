@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import CTA from '../content/CTA.astro'
 import CarouselSection from '../content/CarouselSection.astro'
 import ActivitiesSection from '../content/ActivitiesSection.astro';
+import CaracteristicsSection from '../content/CaracteristicsSection.astro';
 ---
 
 <Layout title="MegaGym">
@@ -10,13 +11,14 @@ import ActivitiesSection from '../content/ActivitiesSection.astro';
 		<CTA />
 		<CarouselSection />
 		<ActivitiesSection />
+		<CaracteristicsSection />
 	</main>
 </Layout>
 
 <style>
 	main {
 		color: var(--false-black);
-		padding: 2rem .5rem;
+		padding: 2rem 0;
 		width: 100%;
 		display: flex;
 		flex-direction: column;
