@@ -66,14 +66,14 @@ import hift from '../assets/members/hift.webp'
     height: 30px;
 }
 .activity-item-header__title {
-    font: normal normal bold 1.5rem var(--main-font, Arial);
+    font: normal normal bold 1.8rem var(--main-font, Arial);
 }
 
 .activity-item-image { 
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
     border-radius: 6px;
-    max-width: 60vw;
-    max-height: 50vh;
+    width: clamp(170px, 60vw, 400px);
+    max-height: 70vh;
     object-fit: cover;
 }
 
@@ -87,17 +87,6 @@ import hift from '../assets/members/hift.webp'
     .activity-item-right, .activity-item-left {
         justify-self: center;
     }
-
-    .activity-item-header__title { font-size: 1.5rem;}
-
-    .activity-item-image { 
-        max-width: 40vw;
-        max-height: 70vh;
-    }
 }
-@media (width >= 768px) {
-    .activity-item-image { 
-        max-width: 30vw;
-    }
-}
+
 </style>
