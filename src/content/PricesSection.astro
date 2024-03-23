@@ -1,0 +1,154 @@
+---
+
+---
+
+<section class="prices-section">
+    <h2 class="prices-section__title">Planes y precios 👀</h2>
+    <ul class="prices-list">
+        <li class="prices-list__item prices-list__item--hover">
+            <h2 class="title">Socio de club</h2>
+            <h4 class="subtitle">(Central entrerriano,<br> Juventud unida, Neptunia)</h4>
+            <table>
+                <thead class="table__head">
+                  <tr>
+                    <th>Veces por semana</th>
+                    <th>Precio</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>2 dias por semana</td>
+                    <td>$17.000</td>
+                  </tr>
+                  <tr>
+                    <td>3 dias por semana</td>
+                    <td>$18.000</td>
+                  </tr>
+                  <tr>
+                    <td>Todos los dias</td>
+                    <td>$20.000</td>
+                  </tr>
+                </tbody>
+                </table>
+        </li>
+        <li class="prices-list__item prices-list__item--hover">
+            <h2 class="title">Standard</h2>
+            <table>
+                <thead class="table__head">
+                  <tr>
+                    <th>Veces por semana</th>
+                    <th>Precio</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>2 dias por semana</td>
+                    <td>$17.000</td>
+                  </tr>
+                  <tr>
+                    <td>3 dias por semana</td>
+                    <td>$18.000</td>
+                  </tr>
+                  <tr>
+                    <td>Todos los dias</td>
+                    <td>$20.000</td>
+                  </tr>
+                </tbody>
+                </table>
+        </li>
+        <li class="prices-list__item prices-list__item--hover">
+            <h2 class="title">Longevo</h2>
+            <h4 class="subtitle">(1 año de continuidad)</h4>
+            <table class="table">
+              <thead class="table__head">
+                <tr>
+                  <th>Veces por semana</th>
+                  <th>Precio</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>2 dias por semana</td>
+                  <td>$17.000</td>
+                </tr>
+                <tr>
+                  <td>3 dias por semana</td>
+                  <td>$18.000</td>
+                </tr>
+                <tr>
+                  <td>Todos los dias</td>
+                  <td>$20.000</td>
+                </tr>
+              </tbody>
+            </table>
+        </li>
+    </ul>
+</section>
+<style>
+  .prices-section { 
+      padding: 0 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem 0;
+  }
+
+  .prices-section__title{
+      font: normal normal 800 1.9rem var(--main-font, Arial);
+      text-decoration: underline;
+      text-decoration: underline;
+      text-align: center;
+  }
+
+  .prices-list{
+      width: 100%;
+      padding: 1.5rem 1rem;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: space-evenly;
+  }
+
+  .prices-list__item{
+    flex-basis: clamp(250px, 20%, 280px);
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem .2rem;
+    background-color: var(--off-yellow);
+    border: 6px solid var(--off-white);
+    border-radius: 6px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+  }
+
+  .title{
+    font: normal normal 900 1.8rem var(--main-font, Arial);
+  }
+
+  .subtitle{
+    text-align: center;
+  }
+
+  table{
+    border-collapse: collapse;
+    border-spacing: 15px;
+  }
+  table, th, td {
+    padding: .3rem;
+  }
+  table thead tr th{
+    border-bottom: 1px solid #000000;
+  }
+
+  .prices-list__item--hover{ 
+    transition: transform .5s, background .5s;
+  }
+  .prices-list__item--hover:hover{
+    transition: transform .5s, background .5s;
+    transform: scale(1.2);
+    background-color: var(--middle-yellow);
+  }
+</style>
