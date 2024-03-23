@@ -1,0 +1,95 @@
+---
+import { Image } from "astro:assets";
+import Sponsor1 from '../assets/logos/alexis newert.webp'
+import Sponsor2 from '../assets/logos/ahoraceroradio.webp'
+import Sponsor3 from '../assets/logos/construccionesdeloeste.webp'
+import Sponsor4 from '../assets/logos/centrodeportes.webp'
+import Sponsor5 from '../assets/logos/donmarioparrila.webp'
+import Sponsor6 from '../assets/logos/mundialdeportes.webp'
+import Sponsor7 from '../assets/logos/farmaciarazzeto.webp'
+import Sponsor8 from '../assets/logos/jmrefrigeracion.webp'
+import Sponsor9 from '../assets/logos/palmares.webp'
+---
+
+<div class="slider">
+    <div class="slide-track">
+        <Image src={Sponsor1} alt="Sponsor1" class="slide" width={100} height={100} loading="lazy" />
+        <Image src={Sponsor2} alt="Sponsor2" class="slide" width={100} height={100} loading="lazy" />
+        <Image src={Sponsor3} alt="Sponsor3" class="slide" width={100} height={100} loading="lazy" />
+        <Image src={Sponsor4} alt="Sponsor4" class="slide" width={100} height={100} loading="lazy" />
+        <Image src={Sponsor5} alt="Sponsor5" class="slide" width={100} height={100} loading="lazy" />
+        <Image src={Sponsor6} alt="Sponsor6" class="slide" width={100} height={100} loading="lazy" />
+        <Image src={Sponsor7} alt="Sponsor7" class="slide" width={100} height={100} loading="lazy" />
+        <Image src={Sponsor8} alt="Sponsor8" class="slide" width={100} height={100} loading="lazy" />
+        <Image src={Sponsor9} alt="Sponsor9" class="slide" width={100} height={100} loading="lazy" />
+        
+        <Image src={Sponsor1} alt="Sponsor1" class="slide" width={100} height={100} loading="lazy" />
+        <Image src={Sponsor2} alt="Sponsor2" class="slide" width={100} height={100} loading="lazy" />
+        <Image src={Sponsor3} alt="Sponsor3" class="slide" width={100} height={100} loading="lazy" />
+        <Image src={Sponsor4} alt="Sponsor4" class="slide" width={100} height={100} loading="lazy" />
+        <Image src={Sponsor5} alt="Sponsor5" class="slide" width={100} height={100} loading="lazy" />
+        <Image src={Sponsor6} alt="Sponsor6" class="slide" width={100} height={100} loading="lazy" />
+        <Image src={Sponsor7} alt="Sponsor7" class="slide" width={100} height={100} loading="lazy" />
+        <Image src={Sponsor8} alt="Sponsor8" class="slide" width={100} height={100} loading="lazy" />
+        <Image src={Sponsor9} alt="Sponsor9" class="slide" width={100} height={100} loading="lazy" />
+    </div>
+</div>
+
+<style>
+.slider {
+    background: transparent;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.slider::before, .slider::after {
+    background: linear-gradient(to right, var(--main-yellow) 0%, rgba(255, 255, 255, 0) 100%);
+    content: "";
+    height: 100%;
+    position: absolute;
+    width: 100px;
+    z-index: 2;
+}
+
+.slider::after {
+    right: 0;
+    top: 0;
+    -webkit-transform: rotateZ(180deg);
+    transform: rotateZ(180deg);
+}
+
+.slider::before {
+    left: 0;
+    top: 0;
+}
+
+.slider .slide-track {
+    animation: scroll 15s linear infinite;
+    padding: 1rem 0;
+    display: flex;
+    width: calc((160px * 18)); /* (imageWidth+columnGap) * DOMquantitySponsors */
+    column-gap: 10px;
+}
+
+.slider .slide-track:hover {
+    animation-play-state: paused;
+}
+
+.slider .slide {
+    height: 100px;
+    width: 150px;
+    object-fit: contain;
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0, 0.8));
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* (imageWidth+columnGap * quantitySponsors */
+        transform: translateX(calc(-160px * 9)); 
+    }
+}
+</style>
