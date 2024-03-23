@@ -1,0 +1,31 @@
+---
+import InfiniteCarousel from "../components/InfiniteCarousel.astro";
+import Sponsor1 from "../assets/logos/alexis newert.webp";
+import Sponsor2 from "../assets/logos/ahoraceroradio.webp";
+import Sponsor3 from "../assets/logos/construccionesdeloeste.webp";
+import Sponsor4 from "../assets/logos/centrodeportes.webp";
+import Sponsor5 from "../assets/logos/donmarioparrila.webp";
+import Sponsor6 from "../assets/logos/mundialdeportes.webp";
+import Sponsor7 from "../assets/logos/farmaciarazzeto.webp";
+import Sponsor8 from "../assets/logos/jmrefrigeracion.webp";
+import Sponsor9 from "../assets/logos/palmares.webp";
+
+const wrappedSponsors = [
+    { src:Sponsor1, alternativeText: 'Logo de Alexis Newert'},
+    { src:Sponsor2, alternativeText: 'Logo de Ahora Cero Radio'},
+    { src:Sponsor3, alternativeText: 'Logo de Construcciones del oeste'},
+    { src:Sponsor4, alternativeText: 'Logo de Centro Deportes'},
+    { src:Sponsor5, alternativeText: 'Logo de Don Mario Parrila'},
+    { src:Sponsor6, alternativeText: 'Logo de Mundial Deportes'},
+    { src:Sponsor7, alternativeText: 'Logo de Farmacia Razzeto'},
+    { src:Sponsor8, alternativeText: 'Logo de JM Refrigeracion'},
+    { src:Sponsor9, alternativeText: 'Logo de Palmares'},
+]
+---
+
+<section id="sponsors">
+  <InfiniteCarousel
+    sizes={{width: 100, height: 100}}
+    images={wrappedSponsors}
+  />
+</section>
