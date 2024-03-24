@@ -1,0 +1,143 @@
+---
+import { Image } from "astro:assets";
+import placeholder1 from '../assets/members/arnold.webp'
+import placeholder2 from '../assets/members/mujergym.webp'
+import placeholder3 from '../assets/members/ronnie.webp'
+import placeholder4 from '../assets/members/viejita.webp'
+import placeholder5 from '../assets/members/vladislava.webp'
+
+
+---
+<section class="testimonials-section">
+    <h2 class="testimonials-section__title">¿Qué opinan los MegaSocios?🧐</h2>
+    <div class="testimonials">
+        <article class="testimonials__item">
+            <Image src={placeholder1} alt="Foto de usuario" class="user-img" width={100} height={100} loading="lazy" />
+            <h4 class="user-name">Nombre de usuario</h4>
+            <p class="testimony">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, animi. Labore earum neque ex animi incidunt esse nostrum laborum numquam aperiam, quam, beatae perspiciatis unde! Sed consequuntur officiis dolores libero. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </article>
+        <article class="testimonials__item">
+            <Image src={placeholder2} alt="Foto de usuario" class="user-img" width={100} height={100} loading="lazy" />
+            <h4 class="user-name">Nombre de usuario</h4>
+            <p class="testimony">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, animi. Labore earum neque ex animi incidunt esse nostrum laborum numquam aperiam, quam, beatae perspiciatis unde! Sed consequuntur officiis dolores libero. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </article>
+        <article class="testimonials__item">
+            <Image src={placeholder3} alt="Foto de usuario" class="user-img" width={100} height={100} loading="lazy" />
+            <h4 class="user-name">Nombre de usuario</h4>
+            <p class="testimony">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, animi. Labore earum neque ex animi incidunt esse nostrum laborum numquam aperiam, quam, beatae perspiciatis unde! Sed consequuntur officiis dolores libero. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </article>
+        <article class="testimonials__item">
+            <Image src={placeholder4} alt="Foto de usuario" class="user-img" width={100} height={100} loading="lazy" />
+            <h4 class="user-name">Nombre de usuario</h4>
+            <p class="testimony">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, animi. Labore earum neque ex animi incidunt esse nostrum laborum numquam aperiam, quam, beatae perspiciatis unde! Sed consequuntur officiis dolores libero. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </article>
+        <article class="testimonials__item">
+            <Image src={placeholder5} alt="Foto de usuario" class="user-img" width={100} height={100} loading="lazy" />
+            <h4 class="user-name">Nombre de usuario</h4>
+            <p class="testimony">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, animi. Labore earum neque ex animi incidunt esse nostrum laborum numquam aperiam, quam, beatae perspiciatis unde! Sed consequuntur officiis dolores libero. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </article>
+    </div>
+</section>
+
+<style>
+.testimonials-section{
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem 0;
+}
+.testimonials-section__title{
+    text-align: center;
+    font: normal normal 800 1.9rem var(--main-font, Arial);
+    text-decoration: underline;|
+}
+.testimonials{
+    padding: ;
+    display: grid;
+    grid-template-areas: 
+        "large1"
+        "short1"
+        "short2"
+        "short3"
+        "large2" 
+    ;
+    gap: 2rem;
+}
+.testimonials__item{
+    position: relative;
+    border-radius: 6px;
+    background-color: var(--off-white);
+    box-shadow: 2px 5px 20px rgba(0,0,0, 0.5);
+    padding: 1rem;
+}
+
+.user-img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    -webkit-shape-outside:circle();
+    shape-outside:circle();
+}
+
+.testimonials__item:nth-child(even) .user-img{
+    float: right;
+    margin-left:2rem;
+     
+}
+.testimonials__item:nth-child(odd) .user-img{
+    float: left;
+    margin-right:2rem;
+}
+
+.user-name{
+    font: normal normal 600 1.35rem var(--main-font, Arial);
+    text-decoration: underline;
+    margin-bottom: .3rem;
+}
+
+.testimony{
+    grid-area: paragraph;
+    font: normal normal 400 1.15rem var(--main-font, Arial);
+    text-align: justify;
+}
+
+.testimonials__item:nth-child(1){ 
+    grid-area: large1;
+}
+.testimonials__item:nth-child(2){ 
+    grid-area: short1;
+}
+.testimonials__item:nth-child(3){ 
+    grid-area: short2;
+}
+.testimonials__item:nth-child(4){ 
+    grid-area: short3;
+}
+.testimonials__item:nth-child(5){ 
+    grid-area: large2;
+}
+
+@media (width > 500px){
+    .testimonials-section{ padding: 0 1rem; }
+    .testimonials{
+        grid-template-areas: 
+        "large1 short1" 
+        "short2 short3" 
+        "large2 large2" 
+        ;
+    }
+}
+
+@media (width > 768px){
+    .testimonials-section{ padding: 0 5rem; }   
+
+    .testimonials{
+        grid-template-areas: 
+        "large1 large1 large1" 
+        "short1 short2 short3" 
+        "large2 large2 large2" 
+        ;
+    }
+}
+</style>
