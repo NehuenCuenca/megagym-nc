@@ -32,13 +32,13 @@ const Navbar = () => {
                         <a className='link_mobile link_mobile_hover' onClick={handleToggle} href="#staff">Staff</a>
                     </li>
                     <li>
-                        <a className='link_mobile link_mobile_hover' onClick={handleToggle} href="#">Precios</a>
+                        <a className='link_mobile link_mobile_hover' onClick={handleToggle} href="#prices">Precios</a>
                     </li>
                     <li>
-                        <a className='link_mobile link_mobile_hover' onClick={handleToggle} href="#">Testimonios</a>
+                        <a className='link_mobile link_mobile_hover' onClick={handleToggle} href="#testimonials">Testimonios</a>
                     </li>
                     <li>
-                        <a className='link_mobile link_mobile_hover' onClick={handleToggle} href="#">Nosotros</a>
+                        <a className='link_mobile link_mobile_hover' onClick={handleToggle} href="#us">Nosotros</a>
                     </li>
                 </ul>
             }
@@ -50,13 +50,13 @@ const Navbar = () => {
                     <a className='link link_hover' onClick={handleToggle} href="#staff">Staff</a>
                 </li>
                 <li>
-                    <a className='link link_hover' onClick={handleToggle} href="#">Precios</a>
+                    <a className='link link_hover' onClick={handleToggle} href="#prices">Precios</a>
                 </li>
                 <li>
-                    <a className='link link_hover' onClick={handleToggle} href="#">Testimonios</a>
+                    <a className='link link_hover' onClick={handleToggle} href="#testimonials">Testimonios</a>
                 </li>
                 <li>
-                    <a className='link link_hover' onClick={handleToggle} href="#">Nosotros</a>
+                    <a className='link link_hover' onClick={handleToggle} href="#us">Nosotros</a>
                 </li>
             </ul>
         </nav>  

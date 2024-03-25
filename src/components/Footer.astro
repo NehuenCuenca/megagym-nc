@@ -39,27 +39,6 @@ import { Icon } from "astro-icon/components";
       </a>
     </div>
   </div>
-  <div class="application">
-    <h4 class="title">Descargar aplicacion</h4>
-    <div class="application__links">
-      <a
-        class="application__link"
-        href="https://www.facebook.com/megagymgchu"
-        target="_blank"
-      >
-        <Icon name="mdi:android" size={30} title="Android"/>
-      </a>
-
-      <a
-        class="application__link"
-        href="https://www.instagram.com/megagymgchu/"
-        target="_blank"
-      >
-        <Icon name="mdi:apple" size={30} title="IOS"/>
-      </a>
-    </div>
-  </div>
-
   <span class="signature">💛 by Nehuen Cuenca</span>
 </footer>
 
@@ -79,16 +58,14 @@ import { Icon } from "astro-icon/components";
     text-align: center;
   }
 
-  .social__links,
-  .application__links {
+  .social__links {
     padding-top: .2rem;
     display: flex;
     gap: 1rem;
     justify-content: center;
   }
 
-  .social__link,
-  .application__link {
+  .social__link {
     text-decoration: none;
     color: var(--false-black);
     cursor: pointer;
@@ -96,11 +73,12 @@ import { Icon } from "astro-icon/components";
 
   .signature { 
     width: max-content;
-    color: var(--off-white); }
+    color: var(--off-white); 
+  }
 
   @media (width >= 768px) {
     .footer-container{ flex-direction: row; }
-    .social__links, .application__links { justify-content: flex-start; }
+    .social__links { justify-content: flex-start; }
 
     .title { text-align: start; }
     .signature { margin: 0 0 0 auto; }
