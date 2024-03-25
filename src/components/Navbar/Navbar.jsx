@@ -24,24 +24,41 @@ const Navbar = () => {
             </button>
             {
                 toggle &&
-                <ul className='navbar__links-list'>
+                <ul className='navbar__links-list_mobile'>
                     <li>
-                        <a className='link' onClick={handleToggle} href="#activities">Actividades</a>
+                        <a className='link_mobile link_mobile_hover' onClick={handleToggle} href="#activities">Actividades</a>
                     </li>
                     <li>
-                        <a className='link' onClick={handleToggle} href="#staff">Staff</a>
+                        <a className='link_mobile link_mobile_hover' onClick={handleToggle} href="#staff">Staff</a>
                     </li>
                     <li>
-                        <a className='link' onClick={handleToggle} href="#">Precios</a>
+                        <a className='link_mobile link_mobile_hover' onClick={handleToggle} href="#">Precios</a>
                     </li>
                     <li>
-                        <a className='link' onClick={handleToggle} href="#">Testimonios</a>
+                        <a className='link_mobile link_mobile_hover' onClick={handleToggle} href="#">Testimonios</a>
                     </li>
                     <li>
-                        <a className='link' onClick={handleToggle} href="#">Nosotros</a>
+                        <a className='link_mobile link_mobile_hover' onClick={handleToggle} href="#">Nosotros</a>
                     </li>
                 </ul>
             }
+            <ul className='navbar__links-list'>
+                <li>
+                    <a className='link link_hover' onClick={handleToggle} href="#activities">Actividades</a>
+                </li>
+                <li>
+                    <a className='link link_hover' onClick={handleToggle} href="#staff">Staff</a>
+                </li>
+                <li>
+                    <a className='link link_hover' onClick={handleToggle} href="#">Precios</a>
+                </li>
+                <li>
+                    <a className='link link_hover' onClick={handleToggle} href="#">Testimonios</a>
+                </li>
+                <li>
+                    <a className='link link_hover' onClick={handleToggle} href="#">Nosotros</a>
+                </li>
+            </ul>
         </nav>  
     )
 }
