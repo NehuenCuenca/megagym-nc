@@ -1,0 +1,108 @@
+---
+import { Image } from "astro:assets";
+import logoMegaGym from "../assets/logos/logo-mega-gym.webp";
+import { Icon } from "astro-icon/components";
+---
+
+<footer class="footer-container">
+  <a href="#home">
+    <Image
+      src={logoMegaGym}
+      class="navbar__logo-megagym"
+      width={70}
+      height={70}
+      alt="Logo de MegaGym"
+      loading="lazy"
+    />
+  </a>
+  <div class="social">
+    <h4 class="title">Redes</h4>
+    <div class="social__links">
+      <a
+        class="social__link"
+        href="https://www.facebook.com/megagymgchu"
+        target="_blank"
+      >
+        <Icon name="mdi:facebook" size={30} title="Facebook"/>
+      </a>
+
+      <a
+        class="social__link"
+        href="https://www.instagram.com/megagymgchu/"
+        target="_blank"
+      >
+        <Icon name="mdi:instagram" size={30} title="Instagram"/>
+      </a>
+
+      <a class="social__link" href="mailto:megagymgchu@gmail.com">
+        <Icon name="mdi:gmail" size={30} title="Gmail"/>
+      </a>
+    </div>
+  </div>
+  <div class="application">
+    <h4 class="title">Descargar aplicacion</h4>
+    <div class="application__links">
+      <a
+        class="application__link"
+        href="https://www.facebook.com/megagymgchu"
+        target="_blank"
+      >
+        <Icon name="mdi:android" size={30} title="Android"/>
+      </a>
+
+      <a
+        class="application__link"
+        href="https://www.instagram.com/megagymgchu/"
+        target="_blank"
+      >
+        <Icon name="mdi:apple" size={30} title="IOS"/>
+      </a>
+    </div>
+  </div>
+
+  <span class="signature">💛 by Nehuen Cuenca</span>
+</footer>
+
+<style>
+  .footer-container {
+    padding: 1rem 2rem;
+    background-color: var(--secondary-yellow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem 3rem;
+  }
+
+  .title {
+    font: normal normal 600 1.3rem var(--main-font, Arial);
+    text-decoration: underline;
+    text-align: center;
+  }
+
+  .social__links,
+  .application__links {
+    padding-top: .2rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .social__link,
+  .application__link {
+    text-decoration: none;
+    color: var(--false-black);
+    cursor: pointer;
+  }
+
+  .signature { 
+    width: max-content;
+    color: var(--off-white); }
+
+  @media (width >= 768px) {
+    .footer-container{ flex-direction: row; }
+    .social__links, .application__links { justify-content: flex-start; }
+
+    .title { text-align: start; }
+    .signature { margin: 0 0 0 auto; }
+  }
+</style>

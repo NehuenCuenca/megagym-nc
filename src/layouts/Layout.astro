@@ -8,6 +8,7 @@ import '@fontsource/bowlby-one-sc';
 
 // Components
 import Navbar from '../components/Navbar/Navbar.jsx'
+import Footer from '../components/Footer.astro'
 ---
 
 <!doctype html>
@@ -25,6 +26,7 @@ import Navbar from '../components/Navbar/Navbar.jsx'
 			<Navbar client:load/>
 		</header>
 		<slot />
+		<Footer />
 	</body>
 </html>
 <style is:global>
