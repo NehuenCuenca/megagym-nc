@@ -1,0 +1,57 @@
+---
+
+---
+<section class="about-us-section">
+    <h2 class="about-us-section__title">Sobre nosotros 🤓</h2>
+    <div class="schedules">
+        <u>Horarios de atención: </u>
+        <p>Lun a Vie de 7 a 23 Hs. Sábados de 8 a 15 Hs.</p>
+    </div>
+    <div class="contact">
+        <u>Consultanos al: </u>
+        <p>+54 9 3446 670344 o en Clavarino 876 (Entre Fray Mocho y Seguí).</p>
+    </div>
+    <div class="google-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3346.0641800807566!2d-58.519627025265414!3d-33.00208337357043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95baa827d0b53203%3A0xcc811859434b0529!2sMega%20Gym!5e0!3m2!1ses!2sar!4v1711374058899!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</section>
+
+<style>
+    .about-us-section{
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    .about-us-section__title{
+        text-align: center;
+        font: normal normal 800 1.9rem var(--main-font, Arial);
+        text-decoration: underline;
+    }
+
+    .schedules, .contact {
+        font: normal normal 400 1.3rem var(--main-font, Arial);
+    }
+    :is(.schedules, .contact) {
+        text-align: center;
+    }
+    :is(.schedules, .contact) p {
+        font: normal normal 600 1.3rem var(--main-font, Arial);
+    }
+    
+    .google-map {
+        width: 80%;
+        padding-bottom: 50%;
+        position: relative;
+    }
+
+    .google-map iframe {
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        position: absolute;
+        box-shadow: 2px 2px 25px rgba(0,0,0, 0.5);
+    }
+    </style>
