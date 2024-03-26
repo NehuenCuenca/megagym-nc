@@ -15,20 +15,20 @@
     cursor: pointer;
 }
 
-.hamburguer-menu{
+.hamburguer-menu, .toggle-theme{
     background-color: transparent;
     border: transparent;
     padding: 0;
     cursor: pointer;
 }
 
-[data-theme="dark"] .hamburguer-menu{
+[data-theme="dark"] :is(.hamburguer-menu, .toggle-theme){
         /* https://codepen.io/sosuke/pen/Pjoqqp */
     filter: invert(93%) sepia(74%) saturate(2244%) hue-rotate(347deg) brightness(109%) contrast(105%);
 }
 
-.hamburguer-menu__icon{
-    filter: drop-shadow(2px 2px 15px var(--color-shadow));
+.hamburguer-menu__icon, .toggle-theme__icon{
+    filter: drop-shadow(2px 2px 20px var(--color-shadow));
 }
 
 .navbar__links-list{

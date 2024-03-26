@@ -1,62 +1,91 @@
 import './Navbar.css'
+import {calculateSettingAsThemeString, updateThemeOnHtmlEl} from '../../helpers/themes.js'
 import { logoMegaGym } from '../../assets/logos/logos.js'
-import { hamburguerMenu, closeMenu } from '../../assets/svgs/svgs.js'
-import { useState } from 'react'
+import { hamburguerMenu, closeMenu, sun, moon } from '../../assets/svgs/svgs.js'
+import { useEffect, useState } from 'react'
 
 const Navbar = () => {
-    const [toggle, setToggle] = useState(false)
-    
-    const handleToggle = () => { 
-        setToggle(!toggle)
-    }
+    const [toggleMenu, setToggleMenu] = useState(false)
+    const [currentTheme, setCurrentTheme] = useState(null);
 
+    useEffect(() => {
+        const localStorageTheme = localStorage.getItem("theme");
+        const systemSettingDark = window.matchMedia("(prefers-color-scheme: dark)");
+        const currentThemeSetting = calculateSettingAsThemeString({ localStorageTheme, systemSettingDark });
+        
+        updateThemeOnHtmlEl({ theme: currentThemeSetting });
+        setCurrentTheme(currentThemeSetting)
+    }, [])
+    
+    const handleToggleMenu = () => { setToggleMenu(!toggleMenu) }
+
+    const handleToggleTheme = () => {
+        const newTheme = (currentTheme === 'light') ? 'dark': 'light'
+        
+        localStorage.setItem("theme", newTheme);
+        updateThemeOnHtmlEl({ theme: newTheme });
+        setCurrentTheme(newTheme)
+    }
+    
     return (
         <nav className="navbar">
             <a href="#home">
                 <img src={logoMegaGym.src} className='navbar__logo-megagym' width={70} height={70} alt="Logo de MegaGym" loading='eager'/>
             </a>
-            <button className="hamburguer-menu" onClick={handleToggle}>
+
+            {
+                currentTheme &&
+                <button className="toggle-theme" onClick={handleToggleTheme}>
+                    <img src={
+                        currentTheme === 'light' 
+                        ? moon.src
+                        : sun.src
+                    } alt="Menu" width={40} height={40} loading='eager' className="toggle-theme__icon"/>
+                </button>
+            }
+
+            <button className="hamburguer-menu" onClick={handleToggleMenu}>
                 <img src={
-                    toggle 
+                    toggleMenu 
                     ? closeMenu.src
                     : hamburguerMenu.src
                 } alt="Menu" width={40} height={40} loading='eager' className="hamburguer-menu__icon"/>
             </button>
             {
-                toggle &&
+                toggleMenu &&
                 <ul className='navbar__links-list_mobile'>
                     <li>
-                        <a className='link_mobile link_mobile_hover' onClick={handleToggle} href="#activities">Actividades</a>
+                        <a className='link_mobile link_mobile_hover' onClick={handleToggleMenu} href="#activities">Actividades</a>
                     </li>
                     <li>
-                        <a className='link_mobile link_mobile_hover' onClick={handleToggle} href="#staff">Staff</a>
+                        <a className='link_mobile link_mobile_hover' onClick={handleToggleMenu} href="#staff">Staff</a>
                     </li>
                     <li>
-                        <a className='link_mobile link_mobile_hover' onClick={handleToggle} href="#prices">Precios</a>
+                        <a className='link_mobile link_mobile_hover' onClick={handleToggleMenu} href="#prices">Precios</a>
                     </li>
                     <li>
-                        <a className='link_mobile link_mobile_hover' onClick={handleToggle} href="#testimonials">Testimonios</a>
+                        <a className='link_mobile link_mobile_hover' onClick={handleToggleMenu} href="#testimonials">Testimonios</a>
                     </li>
                     <li>
-                        <a className='link_mobile link_mobile_hover' onClick={handleToggle} href="#us">Nosotros</a>
+                        <a className='link_mobile link_mobile_hover' onClick={handleToggleMenu} href="#us">Nosotros</a>
                     </li>
                 </ul>
             }
             <ul className='navbar__links-list'>
                 <li>
-                    <a className='link link_hover' onClick={handleToggle} href="#activities">Actividades</a>
+                    <a className='link link_hover' onClick={handleToggleMenu} href="#activities">Actividades</a>
                 </li>
                 <li>
-                    <a className='link link_hover' onClick={handleToggle} href="#staff">Staff</a>
+                    <a className='link link_hover' onClick={handleToggleMenu} href="#staff">Staff</a>
                 </li>
                 <li>
-                    <a className='link link_hover' onClick={handleToggle} href="#prices">Precios</a>
+                    <a className='link link_hover' onClick={handleToggleMenu} href="#prices">Precios</a>
                 </li>
                 <li>
-                    <a className='link link_hover' onClick={handleToggle} href="#testimonials">Testimonios</a>
+                    <a className='link link_hover' onClick={handleToggleMenu} href="#testimonials">Testimonios</a>
                 </li>
                 <li>
-                    <a className='link link_hover' onClick={handleToggle} href="#us">Nosotros</a>
+                    <a className='link link_hover' onClick={handleToggleMenu} href="#us">Nosotros</a>
                 </li>
             </ul>
         </nav>  

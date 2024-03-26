@@ -12,7 +12,7 @@ import Footer from '../components/Footer.astro'
 ---
 
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
@@ -22,7 +22,7 @@ import Footer from '../components/Footer.astro'
 		<title>{title}</title>
 	</head>
 	<body>
-		<header>
+		<header >
 			<Navbar client:load/>
 		</header>
 		<slot />
