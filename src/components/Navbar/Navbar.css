@@ -1,26 +1,34 @@
 .navbar {
     position: relative;
     top: 0;
-    padding: .5rem 1.5rem;
+    padding: 1rem 1.5rem;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color:rgba(249, 255, 6, .9);
-    box-shadow: 2px 2px 20px var(--black);
+    background-color: var(--color-bg);
+    box-shadow: 2px 2px 20px var(--color-shadow);
 }
+
 .navbar__logo-megagym{
-    filter: drop-shadow(10px 4px 10px rgba(0, 0, 0, 0.4));
+    filter: drop-shadow(6px 4px 10px var(--color-shadow));
     cursor: pointer;
 }
+
 .hamburguer-menu{
     background-color: transparent;
     border: transparent;
     padding: 0;
     cursor: pointer;
 }
+
+[data-theme="dark"] .hamburguer-menu{
+        /* https://codepen.io/sosuke/pen/Pjoqqp */
+    filter: invert(93%) sepia(74%) saturate(2244%) hue-rotate(347deg) brightness(109%) contrast(105%);
+}
+
 .hamburguer-menu__icon{
-    filter: drop-shadow(8px 4px 10px rgba(0, 0, 0, 0.6));
+    filter: drop-shadow(2px 2px 15px var(--color-shadow));
 }
 
 .navbar__links-list{
@@ -30,10 +38,10 @@
 .link{
     text-decoration: none;
     font: normal normal 600 1.4rem var(--main-font, Arial);
-    color: var(--false-black);
+    color: var(--color-font);
 }
 .link_hover:hover {
-    filter: drop-shadow(2px 2px 30px var(--black));
+    filter: drop-shadow(2px 2px 20px var(--color-shadow));
 }
 
 .navbar__links-list_mobile{
@@ -44,7 +52,7 @@
     flex-direction: column;
     align-items: center;
     row-gap: 1rem;
-    background-color: var(--false-black);
+    background-color: var(--color-font);
     padding: 1rem;
     border-radius: 6px;
     border: 6px solid var(--secondary-yellow);
@@ -53,11 +61,11 @@
 .link_mobile {
     text-decoration: none;
     font: normal normal 600 1.4rem var(--main-font, Arial);
-    color: var(--main-yellow);
+    color: var(--color-bg);
 }
 
 .link_mobile_hover:hover{
-    filter: drop-shadow(2px 2px 30px var(--main-yellow));
+    filter: drop-shadow(2px 2px 30px var(--color-bg));
 }
 
 .link, .link_mobile {

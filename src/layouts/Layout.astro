@@ -12,7 +12,7 @@ import Footer from '../components/Footer.astro'
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
@@ -45,6 +45,20 @@ import Footer from '../components/Footer.astro'
 		--off-white: #D8D8D8;
 	}
 
+	[data-theme="light"] {
+		background-image: url(../assets/backgrounds/background-light-mesh.png);
+		--color-bg: var(--main-yellow);
+		--color-font: var(--false-black);
+		--color-shadow: var(--false-black);
+	}
+
+	[data-theme="dark"] {
+		background-image: url(../assets/backgrounds/background-dark-mesh.png);
+		--color-bg: var(--false-black);
+		--color-font: var(--main-yellow);
+		--color-shadow: var(--secondary-yellow);
+	}
+
 	/* RESETS */
 	*, *::before, *::after {
 		box-sizing: border-box;
@@ -67,6 +81,10 @@ import Footer from '../components/Footer.astro'
 	p {
 		overflow-wrap: break-word;
 	}
+
+	a { 
+		color:inherit;
+	}
 	
 	ul,ol { 
 		list-style-type: none;
@@ -75,7 +93,6 @@ import Footer from '../components/Footer.astro'
 
 	html {
 		font-family: var(--main-font, Arial);
-		background-image: url(../assets/backgrounds/background-light-mesh.png);
 		background-repeat: no-repeat;
 		background-size: cover;
 		width: 100%;

@@ -27,7 +27,7 @@ const { images, sizes } = Astro.props
 }
 
 .slider::before, .slider::after {
-    background: linear-gradient(to right, var(--main-yellow) 0%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(to right, var(--color-bg) 0%, rgba(255, 255, 255, 0) 100%);
     content: "";
     height: 100%;
     position: absolute;
@@ -63,7 +63,7 @@ const { images, sizes } = Astro.props
     height: 100px;
     width: 150px;
     object-fit: contain;
-    filter: drop-shadow(2px 2px 4px rgba(0,0,0, 0.8));
+    filter: drop-shadow(5px 5px 5px var(--color-shadow));
 }
 
 @keyframes scroll {

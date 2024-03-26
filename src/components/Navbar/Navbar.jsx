@@ -20,7 +20,7 @@ const Navbar = () => {
                     toggle 
                     ? closeMenu.src
                     : hamburguerMenu.src
-                } alt="Menu" width={40} height={40} loading='eager'/>
+                } alt="Menu" width={40} height={40} loading='eager' className="hamburguer-menu__icon"/>
             </button>
             {
                 toggle &&
