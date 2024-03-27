@@ -17,11 +17,11 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td>2 dias por semana</td>
+                    <td>2 dias</td>
                     <td>$17.000</td>
                   </tr>
                   <tr>
-                    <td>3 dias por semana</td>
+                    <td>3 dias</td>
                     <td>$18.000</td>
                   </tr>
                   <tr>
@@ -42,11 +42,11 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td>2 dias por semana</td>
+                    <td>2 dias</td>
                     <td>$17.000</td>
                   </tr>
                   <tr>
-                    <td>3 dias por semana</td>
+                    <td>3 dias</td>
                     <td>$18.000</td>
                   </tr>
                   <tr>
@@ -68,11 +68,11 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>2 dias por semana</td>
+                  <td>2 dias</td>
                   <td>$17.000</td>
                 </tr>
                 <tr>
-                  <td>3 dias por semana</td>
+                  <td>3 dias</td>
                   <td>$18.000</td>
                 </tr>
                 <tr>
@@ -93,7 +93,7 @@
   }
 
   .prices-section__title{
-      font: normal normal 800 1.9rem var(--main-font, Arial);
+      font: normal normal 800 2rem var(--main-font, Arial);
       text-decoration: underline;
       text-align: center;
   }
@@ -110,8 +110,8 @@
   }
 
   .prices-list__item{
-    flex-basis: clamp(250px, 20%, 280px);
-    min-height: 50vh;
+    flex-basis: clamp(250px, 25%, 350px);
+    min-height: 60vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -122,10 +122,11 @@
     border-radius: 6px;
     box-shadow: 5px 5px 25px var(--color-shadow);
     padding: 1rem;
+    font-size: 1.3rem;
   }
 
   .title{
-    font: normal normal 900 1.8rem var(--main-font, Arial);
+    font: normal normal 800 1.8rem var(--main-font, Arial);
   }
 
   .subtitle{
@@ -133,6 +134,7 @@
   }
 
   table{
+    width: 100%;
     border-collapse: collapse;
     border-spacing: 15px;
   }
@@ -148,7 +150,7 @@
   }
   .prices-list__item--hover:hover{
     transition: transform .5s, background .5s;
-    transform: scale(1.2);
+    transform: scale(1.1);
     background-color: var(--middle-yellow);
   }
 </style>
