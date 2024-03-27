@@ -15,7 +15,7 @@ import santi from '../assets/staff/santiago.webp'
             <p>
                 Gracias a su profesionalismo, buena onda y compromiso, 
                 <br><br> 
-                <u>¡la gente nos sigue eligiendo!</u>
+                <u class="carter">¡la gente nos sigue eligiendo!</u>
             </p>
         </li>
         <li class="staff-item">
@@ -51,7 +51,7 @@ import santi from '../assets/staff/santiago.webp'
     }
 
     .staff-section__title{
-        font: normal normal 800 1.9rem var(--main-font, Arial);
+        font: normal normal 800 2rem var(--main-font, Arial);
         text-decoration: underline;
         text-align: center;
         margin-bottom: 2rem;
@@ -67,11 +67,15 @@ import santi from '../assets/staff/santiago.webp'
     
     .staff-item{
         width: clamp(200px, 100%, 270px);
-        font: normal normal 500 1.8rem var(--main-font, Arial);
+        font: normal normal 600 clamp(1.5rem,2vw,2rem) var(--main-font, Arial);
         text-align: center;
         position: relative;
         align-items: center;
         display: grid;
+    }
+
+    u.carter{
+        font-family: var(--accent-font, Helvetica, sans-serif);
     }
 
     .staff-item__image{
