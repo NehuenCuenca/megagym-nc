@@ -22,6 +22,16 @@
     cursor: pointer;
 }
 
+a, .navbar__logo-megagym, .hamburguer-menu, .toggle-theme {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
 [data-theme="dark"] :is(.hamburguer-menu, .toggle-theme){
         /* https://codepen.io/sosuke/pen/Pjoqqp */
     filter: invert(93%) sepia(74%) saturate(2244%) hue-rotate(347deg) brightness(109%) contrast(105%);
