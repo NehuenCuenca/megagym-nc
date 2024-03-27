@@ -3,7 +3,9 @@ import Carousel from "../components/Carousel/Carousel";
 import { members } from '../assets/members/members.js'
 ---
 <section class="CTA-container">
-    <Carousel images={members} client:load/>
+    <div class="carousel-container">
+        <Carousel images={members} client:load/>
+    </div>
     <div class="CTA">
         <h1 class="CTA__title">¿Estas preparad@ para la experiencia MEGAGYM?</h1>
         <p class="CTA__paragraph">Contamos con el lugar, equipamiento y profesionalismo necesario para tu entrenamiento.</p>
@@ -15,8 +17,13 @@ import { members } from '../assets/members/members.js'
     .CTA-container{
         display: flex;
         flex-direction: column-reverse;
-        padding: 0 2rem;
+        padding: 0 .5rem;
         gap: 2rem 3rem;
+    }
+
+    .carousel-container{
+        width: 80%;
+        margin: 0 auto;
     }
     
     .CTA{
@@ -30,17 +37,17 @@ import { members } from '../assets/members/members.js'
 
     .CTA__title {
         /* https://css-tricks.com/snippets/css/font-shorthand/#aa-syntax */
-        font: normal normal normal clamp(1.6rem, 6vw, 2.5rem) var(--special-font, Tahoma);
+        font: normal normal normal clamp(2.6rem, 6vw, 3rem) var(--special-font, Tahoma);
         max-width: 30ch;
     }
 
     .CTA__paragraph {
-        font: normal normal 600 clamp(1.3rem, 2vw, 2rem) var(--main-font, Arial);
+        font: normal normal 600 clamp(1.5rem, 2vw, 2rem) var(--main-font, Arial);
         max-width: 25ch;
     }
 
     .CTA__link-to-activities {
-        font: normal normal 800 1.9rem var(--main-font, Arial);
+        font: normal normal 800 2rem var(--main-font, Arial);
         text-decoration: underline;
     }
 
