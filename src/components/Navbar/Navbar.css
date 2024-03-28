@@ -32,10 +32,10 @@ a, .navbar__logo-megagym, .hamburguer-menu, .toggle-theme {
     user-select: none;
 }
 
-[data-theme="dark"] :is(.hamburguer-menu, .toggle-theme){
+/* [data-theme="dark"] :is(.hamburguer-menu){ */
         /* https://codepen.io/sosuke/pen/Pjoqqp */
-    filter: invert(93%) sepia(74%) saturate(2244%) hue-rotate(347deg) brightness(109%) contrast(105%);
-}
+    /* filter: invert(93%) sepia(74%) saturate(2244%) hue-rotate(347deg) brightness(109%) contrast(105%); */
+/* } */
 
 .hamburguer-menu__icon, .toggle-theme__icon{
     filter: drop-shadow(2px 2px 20px var(--color-shadow));
@@ -55,6 +55,8 @@ a, .navbar__logo-megagym, .hamburguer-menu, .toggle-theme {
 }
 
 .navbar__links-list_mobile{
+    /* animation: fadeInLeft .5s ease 0s 1 normal forwards; */
+    /* animation: fadeOutRight .5s ease 0s 1 forwards forwards; */
     position: fixed;
     top: 6rem;
     right: 1.5rem;
@@ -91,4 +93,33 @@ a, .navbar__logo-megagym, .hamburguer-menu, .toggle-theme {
         display: flex;
         gap: 2rem;
     }
+}
+
+
+.fadeInLeft{
+    animation: fadeInLeft .5s ease 0s 1 normal forwards;
+}
+
+@keyframes fadeInLeft {
+	0% {
+		opacity: 0;
+		transform: translateX(-50px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes fadeOutRight {
+	0% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+
+	100% {
+		opacity: 0;
+		transform: translateX(50px);
+	}
 }

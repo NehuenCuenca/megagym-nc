@@ -1,7 +1,7 @@
 import './Navbar.css'
-import {calculateSettingAsThemeString, updateThemeOnHtmlEl} from '../../helpers/themes.js'
-import { logoMegaGym } from '../../assets/logos/logos.js'
-import { hamburguerMenu, closeMenu, sun, moon } from '../../assets/svgs/svgs.js'
+import { calculateSettingAsThemeString, updateThemeOnHtmlEl } from '@helpers/themes.js'
+import { logoMegaGym } from '@assets/logos/logos.js'
+import { darkMenu, darkCloseMenu, lightMenu, lightCloseMenu, sun, moon } from '@assets/svgs/svgs.js'
 import { useEffect, useState } from 'react'
 
 const Navbar = () => {
@@ -17,7 +17,9 @@ const Navbar = () => {
         setCurrentTheme(currentThemeSetting)
     }, [])
     
-    const handleToggleMenu = () => { setToggleMenu(!toggleMenu) }
+    const handleToggleMenu = () => {
+        setToggleMenu(!toggleMenu)
+    } 
 
     const handleToggleTheme = () => {
         const newTheme = (currentTheme === 'light') ? 'dark': 'light'
@@ -35,25 +37,21 @@ const Navbar = () => {
 
             {
                 currentTheme &&
-                <button className="toggle-theme" onClick={handleToggleTheme}>
-                    <img src={
-                        currentTheme === 'light' 
-                        ? moon.src
-                        : sun.src
-                    } alt="Menu" width={40} height={40} loading='eager' className="toggle-theme__icon"/>
-                </button>
+                <>
+                    <button className="toggle-theme" onClick={handleToggleTheme}>
+                        <img src={currentTheme === 'light' ? moon.src : sun.src} alt="Interruptor de tema" width={40} height={40} loading='eager' className="toggle-theme__icon"/>
+                    </button>
+                
+                    <button className="hamburguer-menu" onClick={handleToggleMenu}>
+                        {currentTheme === 'light' && <img src={toggleMenu ? darkCloseMenu.src : darkMenu.src} alt="Menu" width={40} height={40} loading='eager' className="hamburguer-menu__icon"/>}
+                        {currentTheme === 'dark' && <img src={toggleMenu ? lightCloseMenu.src : lightMenu.src} alt="Menu" width={40} height={40} loading='eager' className="hamburguer-menu__icon"/>}
+                    </button>
+                </>
             }
 
-            <button className="hamburguer-menu" onClick={handleToggleMenu}>
-                <img src={
-                    toggleMenu 
-                    ? closeMenu.src
-                    : hamburguerMenu.src
-                } alt="Menu" width={40} height={40} loading='eager' className="hamburguer-menu__icon"/>
-            </button>
             {
                 toggleMenu &&
-                <ul className='navbar__links-list_mobile'>
+                <ul className='navbar__links-list_mobile fadeInLeft'>
                     <li>
                         <a className='link_mobile link_mobile_hover' onClick={handleToggleMenu} href="#activities">Actividades</a>
                     </li>
