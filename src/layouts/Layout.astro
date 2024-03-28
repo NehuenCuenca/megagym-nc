@@ -31,6 +31,7 @@ import Footer from '../components/Footer.astro'
 </html>
 <style is:global>
 	:root {
+		background-color: #f9ff06;
 		--main-font: 'Gabarito variable', Arial;
 		--accent-font: 'Carter One', Helvetica, sans-serif;
 		--special-font: 'Bowlby One SC', Tahoma;
@@ -46,14 +47,14 @@ import Footer from '../components/Footer.astro'
 	}
 
 	[data-theme="light"] {
-		background-image: url(../assets/backgrounds/background-light-mesh.png);
+		background-image: url(../assets/backgrounds/background-light-mesh.webp);
 		--color-bg: var(--main-yellow);
 		--color-font: var(--false-black);
 		--color-shadow: var(--false-black);
 	}
 
 	[data-theme="dark"] {
-		background-image: url(../assets/backgrounds/background-dark-mesh.png);
+		background-image: url(../assets/backgrounds/background-dark-mesh.webp);
 		--color-bg: var(--false-black);
 		--color-font: var(--main-yellow);
 		--color-shadow: var(--secondary-yellow);
