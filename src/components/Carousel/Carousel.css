@@ -4,7 +4,8 @@
 }
 
 .carousel__image {
-    height: clamp(70vh, 80vh, 90vh);
+    height: clamp(420px, 75vh, 490px);
+    width: clamp(240px, 80%, 600px);
     object-fit: cover;
     box-shadow: 5px 5px 25px var(--color-shadow);
     border-radius: 6px;

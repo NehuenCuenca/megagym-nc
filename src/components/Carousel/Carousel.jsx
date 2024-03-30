@@ -31,7 +31,7 @@ const Carousel = ({ images }) => {
   return (
     <div className='carousel'>
       <button className="carousel__button carousel__button_left" onClick={handlePreviousPicture}> {'<'} </button>
-      <img className="carousel__image" ref={pictureRef} src={images[currentPosition]} alt="Gente haciendo musculacion" />
+      <img width={240} height={420} className="carousel__image" ref={pictureRef} src={images[currentPosition]} alt="Gente haciendo musculacion" />
       <button className="carousel__button carousel__button_right" onClick={handleNextPicture}> {'>'} </button>
     </div>
   );
