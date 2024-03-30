@@ -2,34 +2,35 @@
 
 ---
 
-<section class="prices-section" id="prices">
+<section class="prices-section" id="precios">
     <h2 class="prices-section__title">Planes y precios 👀</h2>
     <ul class="prices-list">
         <li class="prices-list__item prices-list__item--hover">
             <h2 class="title">Socio de club</h2>
-            <h4 class="subtitle">(Central entrerriano,<br> Juventud unida, Neptunia)</h4>
+            <h3 class="subtitle">(Central entrerriano,<br> Juventud unida, Neptunia)</h3>
             <table>
-                <thead class="table__head">
-                  <tr>
-                    <th>Veces por semana</th>
-                    <th>Precio</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>2 dias</td>
-                    <td>$17.000</td>
-                  </tr>
-                  <tr>
-                    <td>3 dias</td>
-                    <td>$18.000</td>
-                  </tr>
-                  <tr>
-                    <td>Todos los dias</td>
-                    <td>$20.000</td>
-                  </tr>
-                </tbody>
-                </table>
+              <thead class="table__head">
+                <tr>
+                  <th>Veces por semana</th>
+                  <th>Precio</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>2 dias</td>
+                  <td>$16.000</td>
+                </tr>
+                <tr>
+                  <td>3 dias</td>
+                  <td>$17.000</td>
+                </tr>
+                <tr>
+                  <td>Pase libre</td>
+                  <td>$19.000</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="discount-label"> -5% </div>
         </li>
         <li class="prices-list__item prices-list__item--hover">
             <h2 class="title">Standard</h2>
@@ -50,7 +51,7 @@
                     <td>$18.000</td>
                   </tr>
                   <tr>
-                    <td>Todos los dias</td>
+                    <td>Pase libre</td>
                     <td>$20.000</td>
                   </tr>
                 </tbody>
@@ -58,7 +59,7 @@
         </li>
         <li class="prices-list__item prices-list__item--hover">
             <h2 class="title">Fiel</h2>
-            <h4 class="subtitle">(1 año de continuidad)</h4>
+            <h3 class="subtitle">(A partir de 1 año de continuidad)</h3>
             <table class="table">
               <thead class="table__head">
                 <tr>
@@ -69,18 +70,19 @@
               <tbody>
                 <tr>
                   <td>2 dias</td>
-                  <td>$17.000</td>
+                  <td>$15.500</td>
                 </tr>
                 <tr>
                   <td>3 dias</td>
-                  <td>$18.000</td>
+                  <td>$16.500</td>
                 </tr>
                 <tr>
-                  <td>Todos los dias</td>
-                  <td>$20.000</td>
+                  <td>Pase libre</td>
+                  <td>$18.5000</td>
                 </tr>
               </tbody>
             </table>
+            <div class="discount-label"> -7,5% </div>
         </li>
     </ul>
 </section>
@@ -110,6 +112,7 @@
   }
 
   .prices-list__item{
+    position: relative;
     flex-basis: clamp(250px, 25%, 350px);
     min-height: 60vh;
     display: flex;
@@ -152,5 +155,17 @@
     transition: transform .5s, background .5s;
     transform: scale(1.1);
     background-color: var(--middle-yellow);
+  }
+
+  .discount-label{
+    position: absolute;
+    border-radius: 50%;
+    top: -2rem;
+    right: -3rem;
+    padding: 1rem;
+    background-color: var(--complementary-yellow);
+    color: var(--white);
+    font: normal normal 600 1.6rem var(--main-font);
+    border-color: transparent;
   }
 </style>
