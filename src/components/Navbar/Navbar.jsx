@@ -31,7 +31,7 @@ const Navbar = () => {
     
     return (
         <nav className="navbar">
-            <a href="#home">
+            <a href="#principal">
                 <img src={logoMegaGym.src} className='navbar__logo-megagym' width={70} height={70} alt="Logo de MegaGym" loading='eager'/>
             </a>
 
@@ -53,37 +53,37 @@ const Navbar = () => {
                 toggleMenu &&
                 <ul className='navbar__links-list_mobile fadeInLeft'>
                     <li>
-                        <a className='link_mobile link_mobile_hover' onClick={handleToggleMenu} href="#activities">Actividades</a>
+                        <a className='link_mobile link_mobile_hover' onClick={handleToggleMenu} href="#actividades">Actividades</a>
                     </li>
                     <li>
                         <a className='link_mobile link_mobile_hover' onClick={handleToggleMenu} href="#staff">Staff</a>
                     </li>
                     <li>
-                        <a className='link_mobile link_mobile_hover' onClick={handleToggleMenu} href="#prices">Precios</a>
+                        <a className='link_mobile link_mobile_hover' onClick={handleToggleMenu} href="#precios">Precios</a>
                     </li>
                     <li>
-                        <a className='link_mobile link_mobile_hover' onClick={handleToggleMenu} href="#testimonials">Testimonios</a>
+                        <a className='link_mobile link_mobile_hover' onClick={handleToggleMenu} href="#testimonios">Testimonios</a>
                     </li>
                     <li>
-                        <a className='link_mobile link_mobile_hover' onClick={handleToggleMenu} href="#us">Nosotros</a>
+                        <a className='link_mobile link_mobile_hover' onClick={handleToggleMenu} href="#nosotros">Nosotros</a>
                     </li>
                 </ul>
             }
             <ul className='navbar__links-list'>
                 <li>
-                    <a className='link link_hover' onClick={handleToggleMenu} href="#activities">Actividades</a>
+                    <a className='link link_hover' onClick={handleToggleMenu} href="#actividades">Actividades</a>
                 </li>
                 <li>
                     <a className='link link_hover' onClick={handleToggleMenu} href="#staff">Staff</a>
                 </li>
                 <li>
-                    <a className='link link_hover' onClick={handleToggleMenu} href="#prices">Precios</a>
+                    <a className='link link_hover' onClick={handleToggleMenu} href="#precios">Precios</a>
                 </li>
                 <li>
-                    <a className='link link_hover' onClick={handleToggleMenu} href="#testimonials">Testimonios</a>
+                    <a className='link link_hover' onClick={handleToggleMenu} href="#testimonios">Testimonios</a>
                 </li>
                 <li>
-                    <a className='link link_hover' onClick={handleToggleMenu} href="#us">Nosotros</a>
+                    <a className='link link_hover' onClick={handleToggleMenu} href="#nosotros">Nosotros</a>
                 </li>
             </ul>
         </nav>  
