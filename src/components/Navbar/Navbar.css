@@ -4,15 +4,24 @@
     padding: 1rem 1.5rem;
     width: 100%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    gap: 1rem;
     background-color: var(--color-bg);
     box-shadow: 2px 2px 20px var(--color-shadow);
+}
+
+a[href="#principal"]{
+    margin:  0 auto 0 0;
 }
 
 .navbar__logo-megagym{
     filter: drop-shadow(6px 4px 10px var(--color-shadow));
     cursor: pointer;
+}
+
+.navbar__buttons{
+    display:flex;
+    gap: 1rem;
 }
 
 .hamburguer-menu, .toggle-theme{
@@ -31,11 +40,6 @@ a, .navbar__logo-megagym, .hamburguer-menu, .toggle-theme {
     -ms-user-select: none;
     user-select: none;
 }
-
-/* [data-theme="dark"] :is(.hamburguer-menu){ */
-        /* https://codepen.io/sosuke/pen/Pjoqqp */
-    /* filter: invert(93%) sepia(74%) saturate(2244%) hue-rotate(347deg) brightness(109%) contrast(105%); */
-/* } */
 
 .hamburguer-menu__icon, .toggle-theme__icon{
     filter: drop-shadow(2px 2px 20px var(--color-shadow));
@@ -67,13 +71,13 @@ a, .navbar__logo-megagym, .hamburguer-menu, .toggle-theme {
     background-color: var(--color-font);
     padding: 1rem;
     border-radius: 6px;
-    border: 6px solid var(--secondary-yellow);
+    border: 6px solid var(--gold);
 }
 
 .link_mobile {
     text-decoration: none;
     font: normal normal 600 1.4rem var(--main-font, Arial);
-    color: var(--color-bg);
+    color: var(--white);
 }
 
 .link_mobile_hover:hover{
@@ -91,7 +95,11 @@ a, .navbar__logo-megagym, .hamburguer-menu, .toggle-theme {
 
     .navbar__links-list{
         display: flex;
-        gap: 2rem;
+        gap: 1rem;
+    }
+
+    .navbar__buttons{
+        order: 1;
     }
 }
 

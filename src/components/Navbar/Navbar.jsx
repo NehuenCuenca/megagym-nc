@@ -37,7 +37,7 @@ const Navbar = () => {
 
             {
                 currentTheme &&
-                <>
+                <div className='navbar__buttons'> 
                     <button className="toggle-theme" onClick={handleToggleTheme}>
                         <img src={currentTheme === 'light' ? moon.src : sun.src} alt="Interruptor de tema" width={40} height={40} loading='eager' className="toggle-theme__icon"/>
                     </button>
@@ -46,7 +46,7 @@ const Navbar = () => {
                         {currentTheme === 'light' && <img src={toggleMenu ? darkCloseMenu.src : darkMenu.src} alt="Menu" width={40} height={40} loading='eager' className="hamburguer-menu__icon"/>}
                         {currentTheme === 'dark' && <img src={toggleMenu ? lightCloseMenu.src : lightMenu.src} alt="Menu" width={40} height={40} loading='eager' className="hamburguer-menu__icon"/>}
                     </button>
-                </>
+                </div>
             }
 
             {
@@ -69,6 +69,7 @@ const Navbar = () => {
                     </li>
                 </ul>
             }
+
             <ul className='navbar__links-list'>
                 <li>
                     <a className='link link_hover' onClick={handleToggleMenu} href="#actividades">Actividades</a>
