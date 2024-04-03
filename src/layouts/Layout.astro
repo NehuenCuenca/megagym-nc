@@ -3,8 +3,7 @@ const { title } = Astro.props;
 
 // Fonts
 import '@fontsource-variable/gabarito';
-import '@fontsource/carter-one';
-import '@fontsource/bowlby-one-sc';
+import '@fontsource-variable/roboto-flex';
 
 // Components
 import Navbar from '../components/Navbar/Navbar.jsx'
@@ -31,19 +30,16 @@ import Footer from '../components/Footer.astro'
 </html>
 <style is:global>
 	:root {
-		background-color: #f9ff06;
-		--main-font: 'Gabarito variable', Arial;
-		--accent-font: 'Carter One', Helvetica, sans-serif;
-		--special-font: 'Bowlby One SC', Tahoma;
-		--main-yellow: #f9ff06;
-		--secondary-yellow: #96963E;
-		--middle-yellow: #FDFF62;
-		--off-yellow: #FFFF93;
-		--complementary-yellow: #6462FF;
+		background-color: #FFFFFF;
+		--logo-font: 'Gabarito variable', Tahoma;
+		--default-font: 'Roboto Flex Variable', sans-serif, Arial;
 		--black: #000000;
-		--false-black: #202020;
 		--white: #FFFFFF;
-		--off-white: #D8D8D8;
+		--false-black: #1C1C1B;
+		--grey: #B2B0B0;
+		--grey-soft: #CACBC9;
+		--grey-dark: #81807E;
+		--gold: #DEC73A;
 	}
 
 	[data-theme="light"] {
@@ -93,7 +89,7 @@ import Footer from '../components/Footer.astro'
 	}
 
 	html {
-		font-family: var(--main-font, Arial);
+		font-family: var(--default-font);
 		background-repeat: no-repeat;
 		background-size: cover;
 		width: 100%;
