@@ -5,17 +5,17 @@ import { Icon } from 'astro-icon/components';
 <section>
     <ul class="caracteristics-list">
         <li class="caracteristics-list-item">
-            <Icon name="mdi:event-note" class="caracteristics-list-item__icon"/>
+            <Icon name="mdi:event-note" class="caracteristics-list-item__icon" size={50}/>
             <h3 class="caracteristics-list-item__title">Personaliza tu rutina</h3>
             <p class="caracteristics-list-item__paragraph">Según tu objetivo, pedí una rutina en la mesa de entrada sin cargo.</p>
         </li>
         <li class="caracteristics-list-item">
-            <Icon name="mdi:chart-box" class="caracteristics-list-item__icon"/>
+            <Icon name="mdi:chart-box" class="caracteristics-list-item__icon" size={50}/>
             <h3 class="caracteristics-list-item__title">Registramos tu progreso</h3>
             <p class="caracteristics-list-item__paragraph">Medimos tu masa muscular, peso y perdida de grasa para evaluar el progreso.</p>
         </li>
         <li class="caracteristics-list-item">
-            <Icon name="mdi:human-greeting" class="caracteristics-list-item__icon"/>
+            <Icon name="mdi:human-greeting" class="caracteristics-list-item__icon" size={50}/>
             <h3 class="caracteristics-list-item__title">Te guiamos</h3>
             <p class="caracteristics-list-item__paragraph">Tanto en la ejecucion de los ejercicios como en tu alimentacion diaria.</p>
         </li>
@@ -24,15 +24,15 @@ import { Icon } from 'astro-icon/components';
 
 <style>
 .caracteristics-list{
-    background-color: var(--white);
+    background-color: var(--false-black);
     width: 100%;
     padding: 1.5rem 1rem;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 2rem;
+    gap: 3rem;
     justify-content: space-evenly;
-    color: var(--false-black);
+    color: var(--white);
 }
 
 .caracteristics-list-item{
@@ -44,16 +44,20 @@ import { Icon } from 'astro-icon/components';
 }
 
 .caracteristics-list-item__icon{
-    width: 50px;
-    height: 50px;
+    color: var(--gold);
     filter: drop-shadow(2px 2px 35px var(--false-black));
 }
-.caracteristics-list-item__title{
+.caracteristics-list-item__title, .caracteristics-list-item__paragraph{
     text-align: center;
+}
+
+.caracteristics-list-item__title{
     font: normal normal 600 1.8rem var(--main-font, Arial);
+    color: var(--white);
 }
 .caracteristics-list-item__paragraph{
     text-align: center;
-    font: normal normal 400 1.2rem var(--main-font, Arial);
+    font: normal normal 500 1.3rem var(--main-font, Arial);
+    color: var(--grey);
 }
 </style>
