@@ -1,38 +1,26 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useEffect } from "react";
 import './Carousel.css'
 
-const Carousel = ({ images }) => {
-  const pictureRef = useRef(null);
-
+const Carousel = ({ images, textTitle, textParagraph }) => {
   const [currentPosition, setCurrentPosition] = useState(0)
 
-  const handlePreviousPicture = () => { 
-    if(currentPosition < 1){
-      setCurrentPosition(images.length-1)
-      return
-    }
-
-    setCurrentPosition(currentPosition-1)
-  }
-
-  const handleNextPicture = () => { 
-    if(currentPosition >= images.length-1){
-      setCurrentPosition(0)
-      return
-    }
-
-    setCurrentPosition(currentPosition+1)
-  }
-
   useEffect(() => {
-    pictureRef.current.src = images[currentPosition]
+    const timeout = setTimeout(() => {
+      const nextPosition = (currentPosition+1 >= images.length) ? 0 : currentPosition+1
+      setCurrentPosition(nextPosition)
+    }, 3000);
+
+    return () => { clearTimeout(timeout) }
   }, [currentPosition])
 
   return (
     <div className='carousel'>
-      <button className="carousel__button carousel__button_left" onClick={handlePreviousPicture}> {'<'} </button>
-      <img width={240} height={420} className="carousel__image" ref={pictureRef} src={images[currentPosition]} alt="Gente haciendo musculacion" />
-      <button className="carousel__button carousel__button_right" onClick={handleNextPicture}> {'>'} </button>
+      <img width={340} height={420} className="carousel__image" src={images[currentPosition]} alt="Gente haciendo musculacion" />
+      <div className="carousel__overlay"></div>
+      <div className="CTA">
+        <h1 className="CTA__title">{textTitle}</h1>
+        <p className="CTA__paragraph">{textParagraph}</p>
+      </div>
     </div>
   );
 };
