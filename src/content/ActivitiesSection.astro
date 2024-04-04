@@ -3,39 +3,40 @@ import { Image } from "astro:assets";
 import { Icon } from 'astro-icon/components';
 
 import musculacion from '@assets/members/curl-barra.webp'
-import functional from '@assets/members/peso-muerto.webp'
+import crossfit from '@assets/members/peso-muerto.webp'
 import hiit from '@assets/members/hiit.webp'
 import hift from '@assets/members/hift.webp'
 ---
 <section id="actividades" class="activities-container">
+    <h2 class="activities-container__title">CONOCE NUESTRAS ACTIVIDADES</h2>
     <ul class="activities-list">
-        <li class="activity-item activity-item-left">
-            <div class="activity-item-header">
-                <Icon name="mdi:dumbbell" class="activity-item-header__icon"/>
-                <span class="activity-item-header__title">Musculacion</span>
+        <li class="activity-item">
+            <div class="activity-item-overlay">
+                <Icon name="mdi:dumbbell" class="activity-item-overlay__icon" size={35}/>
+                <span class="activity-item-overlay__title">Musculación</span>
             </div>
             <Image src={musculacion} class="activity-item-image" alt="Hombre realizando curl de biceps con barra (musculacion)"/>
         </li>
-        <li class="activity-item activity-item-right">
-            <div class="activity-item-header">
-                <Icon name="mdi:clipboard-list" class="activity-item-header__icon"/>
-                <h2 class="activity-item-header__title">Crossfit</h2>
+        <li class="activity-item">
+            <div class="activity-item-overlay">
+                <Icon name="mdi:clipboard-list" class="activity-item-overlay__icon" size={35}/>
+                <span class="activity-item-overlay__title">Crossfit</span>
             </div>
-            <Image src={functional} class="activity-item-image" alt="Mujer realizando peso muerto con barra (functional)"/>
+            <Image src={crossfit} class="activity-item-image" alt="Mujeres haciendo peso muerto"/>
         </li>
-        <li class="activity-item activity-item-left">
-            <div class="activity-item-header">
-                <Icon name="mdi:timer-alert" class="activity-item-header__icon"/>
-                <h2 class="activity-item-header__title">HIIT</h2>
+        <li class="activity-item">
+            <div class="activity-item-overlay">
+                <Icon name="mdi:timer-alert" class="activity-item-overlay__icon" size={35}/>
+                <span class="activity-item-overlay__title">HIIT</span>
             </div>
-            <Image src={hiit} class="activity-item-image" alt="Hombre corriendo en la cinta (HIIT)"/>
+            <Image src={hiit} class="activity-item-image" alt="Hombre realizando curl de biceps con barra (musculacion)"/>
         </li>
-        <li class="activity-item activity-item-right">
-            <div class="activity-item-header">
-                <Icon name="mdi:gymnastics" class="activity-item-header__icon"/>
-                <h2 class="activity-item-header__title">HIFT</h2>
+        <li class="activity-item">
+            <div class="activity-item-overlay">
+                <Icon name="mdi:gymnastics" class="activity-item-overlay__icon" size={35}/>
+                <span class="activity-item-overlay__title">HIFT</span>
             </div>
-            <Image src={hift} class="activity-item-image" alt="Hombre haciendo ejercicio aerobico (HIFT)"/>
+            <Image src={hift} class="activity-item-image" alt="Hombre realizando curl de biceps con barra (musculacion)"/>
         </li>
     </ul>
 </section>
@@ -43,30 +44,46 @@ import hift from '@assets/members/hift.webp'
 
 <style>
 
+.activities-container__title{
+    font: normal normal 800 clamp(2.8rem, 5vw, 5rem) var(--logo-font, Arial);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
 .activities-list {
     width: 100%;
     padding: 0 1rem;
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2rem;
+    justify-items: center;
+    gap: 3rem;
 }
 
+.activity-item{
+    position: relative;
+}
 
-.activity-item-right { justify-self: end; }
-.activity-item-left { justify-self: start; }
-
-
-.activity-item-header { 
+.activity-item-overlay { 
+    padding: 1rem 0;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0, 0.8) 30% ,black 100%);
+    width: 100%;
+    position: absolute;
+    bottom: 0;
     display: flex;
+    justify-content: center;
     align-items: center;
     gap: 0 .2rem;
+    border-radius: 6px;
 }
-.activity-item-header__icon {
-    width: 30px;
-    height: 30px;
+.activity-item-overlay__icon, .activity-item-overlay__title {
+    color: white;
 }
-.activity-item-header__title {
-    font: normal normal bold 2rem var(--main-font, Arial);
+
+.activity-item-overlay__icon {
+    display: none;
+}
+.activity-item-overlay__title {
+    font: normal normal bold clamp(1.8rem, 6vw, 2.5rem) var(--main-font, Arial);
 }
 
 .activity-item-image { 
@@ -83,9 +100,12 @@ import hift from '@assets/members/hift.webp'
         justify-items: center;
         align-items: center
     }
+}
 
-    .activity-item-right, .activity-item-left {
-        justify-self: center;
+@media (width >= 650px) {
+    
+    .activity-item-overlay__icon {
+        display: block;
     }
 }
 
