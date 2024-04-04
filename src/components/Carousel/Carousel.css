@@ -24,24 +24,26 @@
     position: absolute;
     top: 0;
     height: 100%;
-    width: 80%;
+    width: 95%;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
+    gap: 1rem 0;
     text-align: center;
 }
 
 .CTA__title {
     /* https://css-tricks.com/snippets/css/font-shorthand/#aa-syntax */
-    font: normal normal 900 clamp(2.5rem, 10vw, 4rem) var(--logo-font, Tahoma);
+    font: normal normal 900 clamp(2.5rem, 9vw, 4.5rem) var(--logo-font, Tahoma);
+    /* text-transform: uppercase; */
     background: -webkit-linear-gradient(var(--grey),#FFFFFF, var(--grey));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .CTA__paragraph {
-    font: normal normal 700 clamp(1.35rem, 3vw, 2rem) var(--default-font, Arial);
-    max-width: 25ch;
+    font: normal normal 150 clamp(1.3rem, 3vw, 2rem) var(--default-font, Arial);
+    max-width: 30ch;
     color: var(--white);
 }
