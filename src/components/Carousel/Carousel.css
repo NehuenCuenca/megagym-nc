@@ -16,7 +16,7 @@
 .carousel__overlay{
     position: absolute;
     height: clamp(420px, 90vh, 80vh);
-    width: clamp(320px, 100vw, 1440px);
+    width: clamp(320px, 100%, 1440px);
     background-color: rgba(0,0,0, 0.5);
 }
 

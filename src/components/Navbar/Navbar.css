@@ -15,7 +15,6 @@ a[href="#principal"]{
 }
 
 .navbar__logo-megagym{
-    filter: drop-shadow(6px 4px 10px var(--color-shadow));
     cursor: pointer;
 }
 
@@ -54,9 +53,69 @@ a, .navbar__logo-megagym, .hamburguer-menu, .toggle-theme {
     font: normal normal 600 1.4rem var(--main-font, Arial);
     color: var(--color-font);
 }
-.link_hover:hover {
-    filter: drop-shadow(2px 2px 20px var(--color-shadow));
+
+.link_hover,
+.link_hover:after,
+.link_hover:before {
+  transition: all .5s;
 }
+.link_hover:hover {
+  color: #555;
+}
+
+.link_hover {
+  position: relative;
+}
+.link_hover:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '.';
+  color: transparent;
+  background: #aaa;
+  height: 1px;
+}
+
+.link_hover {
+  transition: all 2s;
+}
+
+.link_hover:after {
+  text-align: left;
+  content: '.';
+  margin: 0;
+  opacity: 0;
+}
+.link_hover:hover {
+  color: var(--false-black);
+  z-index: 1;
+}
+.link_hover:hover:after {
+  z-index: -10;
+  animation: fill .5s forwards;
+  -webkit-animation: fill .5s forwards;
+  -moz-animation: fill .5s forwards;
+  opacity: 1;
+}
+
+@-webkit-keyframes fill {
+    0% {
+      width: 0%;
+      height: 1px;
+    }
+    50% {
+      width: 100%;
+      height: 1px;
+    }
+    100% {
+      width: 100%;
+      height: 100%;
+      background: var(--gold);
+    }
+  }
 
 .navbar__links-list_mobile{
     /* animation: fadeInLeft .5s ease 0s 1 normal forwards; */
@@ -78,10 +137,6 @@ a, .navbar__logo-megagym, .hamburguer-menu, .toggle-theme {
     text-decoration: none;
     font: normal normal 600 1.4rem var(--main-font, Arial);
     color: var(--white);
-}
-
-.link_mobile_hover:hover{
-    filter: drop-shadow(2px 2px 30px var(--color-bg));
 }
 
 .link, .link_mobile {
