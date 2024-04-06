@@ -33,6 +33,9 @@
     text-align: center;
 }
 
+.CTA__title, .CTA__paragraph {
+    text-wrap: balance;
+}
 .CTA__title {
     /* https://css-tricks.com/snippets/css/font-shorthand/#aa-syntax */
     font: normal normal 900 clamp(2.5rem, 9vw, 4.5rem) var(--logo-font, Tahoma);

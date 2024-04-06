@@ -50,7 +50,7 @@ a, .navbar__logo-megagym, .hamburguer-menu, .toggle-theme {
 
 .link{
     text-decoration: none;
-    font: normal normal 600 1.4rem var(--main-font, Arial);
+    font: normal normal 600 1.4rem var(--logo-font, Arial);
     color: var(--color-font);
 }
 
