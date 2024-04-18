@@ -1,9 +1,11 @@
 ---
+import { Icon } from "astro-icon/components";
+
 
 ---
 
 <section class="prices-section" id="precios">
-    <h2 class="prices-section__title">Planes y precios 👀</h2>
+    <h2 class="prices-section__title">Planes y precios</h2>
     <ul class="prices-list">
         <li class="prices-list__item prices-list__item--hover">
             <h2 class="title">Socio de club</h2>
@@ -30,7 +32,6 @@
                 </tr>
               </tbody>
             </table>
-            <div class="discount-label"> -5% </div>
         </li>
         <li class="prices-list__item prices-list__item--hover">
             <h2 class="title">Standard</h2>
@@ -82,37 +83,40 @@
                 </tr>
               </tbody>
             </table>
-            <div class="discount-label"> -7,5% </div>
         </li>
     </ul>
+    <button class="contact-whatsapp">
+      <span class="contact-whatsapp__text">Consultar por WhatsApp</span> 
+      <Icon class="contact-whatsapp__icon" name="mdi:whatsapp" size={30} />
+    </button>
 </section>
 <style>
   .prices-section { 
       padding: 0 1rem;
       display: flex;
       flex-direction: column;
+      align-items: center;
       gap: 1rem 0;
   }
 
   .prices-section__title{
-      font: normal normal 800 2rem var(--main-font, Arial);
-      text-decoration: underline;
-      text-align: center;
+    font: normal normal 800 clamp(2.8rem, 5vw, 5rem) var(--logo-font, Arial);
+    text-align: center;
+    text-transform: uppercase;
   }
 
   .prices-list{
-      width: 100%;
-      padding: 1.5rem 1rem;
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      gap: 2rem;
-      justify-content: space-evenly;
-      color: var(--false-black);
+    width: 100%;
+    padding: 1.5rem 1rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-evenly;
+    color: var(--white);
   }
 
   .prices-list__item{
-    position: relative;
     flex-basis: clamp(250px, 25%, 350px);
     min-height: 60vh;
     display: flex;
@@ -120,8 +124,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 1rem .2rem;
-    background-color: var(--off-yellow);
-    border: 6px solid var(--off-white);
+    background-color: var(--false-black);
     border-radius: 6px;
     box-shadow: 5px 5px 25px var(--color-shadow);
     padding: 1rem;
@@ -129,11 +132,14 @@
   }
 
   .title{
-    font: normal normal 800 1.8rem var(--main-font, Arial);
+    font: normal normal 800 2rem var(--logo-font, Arial);
   }
 
   .subtitle{
     text-align: center;
+    font-weight: 200;
+    font-size: 1.5rem;
+    color: var(--grey-soft);
   }
 
   table{
@@ -145,28 +151,34 @@
     padding: .3rem;
   }
   table thead tr th{
-    border-bottom: 1px solid var(--false-black);
+    border-bottom: 2px solid var(--gold);
   }
 
-  .prices-list__item--hover{ 
-    transition: transform .5s, background .5s;
-  }
-  .prices-list__item--hover:hover{
-    transition: transform .5s, background .5s;
-    transform: scale(1.1);
-    background-color: var(--middle-yellow);
+  .prices-list__item:nth-child(2){
+    background: rgb(75,75,75);
+    background: linear-gradient(130deg, rgba(75,75,75,1) 5%, rgba(28,28,27,1) 50%, rgba(75,75,75,1) 95%);
   }
 
-  .discount-label{
-    position: absolute;
-    border-radius: 50%;
-    top: -2rem;
-    right: -1rem;
-    padding: .5rem 1rem;
-    background-color: var(--complementary-yellow);
-    color: var(--white);
-    font: normal normal 600 1.6rem var(--main-font);
-    border-color: transparent;
-    z-index: 1;
+  .contact-whatsapp{
+    width: fit-content;
+    font: normal normal 700 1.5rem var(--logo-font, Arial);
+    color: var(--grey-soft);
+    background-color: var(--false-black);
+    cursor: pointer;
+    box-shadow: 4px 4px 25px rgba(28,28,28,0.5);
+    border-radius: 6px;
+    outline: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 1rem .5rem;
+    gap: .5rem;
+    transition: color .3s ease;
+  }
+  
+  .contact-whatsapp:hover, :has(.prices-list__item:hover) .contact-whatsapp{
+    color: var(--gold);
   }
 </style>
