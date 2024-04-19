@@ -1,5 +1,5 @@
 ---
-import InfiniteCarousel from "@components/InfiniteCarousel.astro";
+import SponsorsInfiniteCarousel from "@components/SponsorsInfiniteCarousel.astro";
 import Sponsor1 from "@assets/logos/alexis newert.webp";
 import Sponsor2 from "@assets/logos/ahoraceroradio.webp";
 import Sponsor3 from "@assets/logos/construccionesdeloeste.webp";
@@ -24,7 +24,7 @@ const wrappedSponsors = [
 ---
 
 <section id="sponsors">
-  <InfiniteCarousel
+  <SponsorsInfiniteCarousel
     sizes={{width: 100, height: 100}}
     images={wrappedSponsors}
   />

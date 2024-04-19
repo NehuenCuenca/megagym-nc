@@ -1,41 +1,24 @@
 ---
 import { Image } from "astro:assets";
+import TestimoniesInfiniteCarousel from "@components/TestimoniesInfiniteCarousel.astro";
 
 import placeholder1 from '@assets/members/arnold.webp'
 import placeholder2 from '@assets/members/mujergym.webp'
 import placeholder3 from '@assets/members/ronnie.webp'
 import placeholder4 from '@assets/members/viejita.webp'
 import placeholder5 from '@assets/members/vladislava.webp'
+
+const wrappedTestimonies = [
+    { memberImage: placeholder4, testimonyText: "Soy una apasionada del fitness y he probado diferentes gimnasios a lo largo de mi vida, pero ninguno como MegaGym. Lo que más me gusta es la gran variedad de máquinas y equipos de última generación que tienen a disposición de los socios."},
+    { memberImage: placeholder2, testimonyText: "MegaGym es mucho más que un gimnasio para mí. Es una comunidad de personas que comparten la misma pasión por el fitness y la vida saludable."},
+    { memberImage: placeholder1, testimonyText: "Durante muchos años, intenté ponerme en forma por mi cuenta, pero sin éxito. Fue entonces cuando decidí apuntarme a MegaGym y, sin duda, fue la mejor decisión que pude tomar."},
+    { memberImage: placeholder3, testimonyText: "Siempre he sido una persona activa, pero nunca había encontrado un gimnasio que me ofreciera una experiencia tan completa como MegaGym."},
+    { memberImage: placeholder5, testimonyText: "MegaGym llegó a mi vida en un momento crucial. Me encontraba desmotivada y sin energía, y necesitaba un cambio radical. Desde el primer día, me sentí acogida por un equipo de profesionales excepcionales que me guiaron y motivaron en cada paso."},
+]
 ---
 <section class="testimonials-section" id="testimonios">
-    <h2 class="testimonials-section__title">¿Qué opinan los MegaSocios?🧐</h2>
-    <div class="testimonials">
-        <article class="testimonials__item">
-            <Image src={placeholder1} alt="Foto de usuario" class="user-img" width={100} height={100} loading="lazy" />
-            <h3 class="user-name">Miguel Herrera</h3>
-            <p class="testimony">Durante muchos años, intenté ponerme en forma por mi cuenta, pero sin éxito. Fue entonces cuando decidí apuntarme a MegaGym y, sin duda, fue la mejor decisión que pude tomar. Los instructores me ayudaron a crear un plan de entrenamiento personalizado que se ajustaba a mis necesidades y objetivos. Además, el ambiente en el gimnasio es muy motivador, lo que me ayuda a ser constante y no rendirme.</p>
-        </article>
-        <article class="testimonials__item">
-            <Image src={placeholder2} alt="Foto de usuario" class="user-img" width={100} height={100} loading="lazy" />
-            <h3 class="user-name">Julieta Fernandez</h3>
-            <p class="testimony">MegaGym es mucho más que un gimnasio para mí. Es una comunidad de personas que comparten la misma pasión por el fitness y la vida saludable. Desde que me apunté, he conocido a gente maravillosa con la que comparto mis entrenamientos y mis objetivos.</p>
-        </article>
-        <article class="testimonials__item">
-            <Image src={placeholder3} alt="Foto de usuario" class="user-img" width={100} height={100} loading="lazy" />
-            <h3 class="user-name">Pepe Del Valle</h3>
-            <p class="testimony">Siempre he sido una persona activa, pero nunca había encontrado un gimnasio que me ofreciera una experiencia tan completa como MegaGym. Desde el primer momento, me enamoré de la variedad de clases que ofrecen, desde Zumba hasta HIIT, pasando por Yoga y Pilates. Los instructores son apasionados por su trabajo y siempre están dispuestos a ayudarte a mejorar tu técnica y superar tus límites.</p>
-        </article>
-        <article class="testimonials__item">
-            <Image src={placeholder4} alt="Foto de usuario" class="user-img" width={100} height={100} loading="lazy" />
-            <h3 class="user-name">Elba Rilette</h3>
-            <p class="testimony">Soy una apasionada del fitness y he probado diferentes gimnasios a lo largo de mi vida, pero ninguno como MegaGym. Lo que más me gusta es la gran variedad de máquinas y equipos de última generación que tienen a disposición de los socios. Esto me permite realizar entrenamientos completos y personalizados, sin tener que esperar por turnos.</p>
-        </article>
-        <article class="testimonials__item">
-            <Image src={placeholder5} alt="Foto de usuario" class="user-img" width={100} height={100} loading="lazy" />
-            <h3 class="user-name">Andrea Blanco</h3>
-            <p class="testimony">MegaGym llegó a mi vida en un momento crucial. Me encontraba desmotivada y sin energía, y necesitaba un cambio radical. Desde el primer día, me sentí acogida por un equipo de profesionales excepcionales que me guiaron y motivaron en cada paso. Las clases son dinámicas y variadas, y las instalaciones son de última generación.</p>
-        </article>
-    </div>
+    <h2 class="testimonials-section__title">¿Qué opinan los MegaSocios?</h2>
+    <TestimoniesInfiniteCarousel testimonies={wrappedTestimonies}/>
 </section>
 
 <style>
@@ -45,101 +28,18 @@ import placeholder5 from '@assets/members/vladislava.webp'
     flex-direction: column;
     gap: 1.5rem 0;
 }
+
 .testimonials-section__title{
+    font: normal normal 800 clamp(2.8rem, 5vw, 5rem) var(--logo-font, Arial);
     text-align: center;
-    font: normal normal 800 2rem var(--main-font, Arial);
-    text-decoration: underline;
+    text-transform: uppercase;
+    word-break: break-word;
 }
+
 .testimonials{
-    color: var(--false-black);
-    display: grid;
-    grid-template-areas: 
-        "large1"
-        "short1"
-        "short2"
-        "short3"
-        "large2" 
-    ;
-    gap: 2rem;
-}
-.testimonials__item{
-    position: relative;
-    border-radius: 6px;
-    background-color: var(--off-white);
-    box-shadow: 5px 5px 20px var(--color-shadow);
-    padding: 1rem;
-}
-
-.user-img{
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    -webkit-shape-outside:circle();
-    shape-outside:circle();
-    box-shadow: 5px 5px 10px var(--false-black);
-}
-
-.testimonials__item:nth-child(even) .user-img{
-    float: right;
-    margin-left:2rem;
-    margin-bottom: .4rem;
-     
-}
-.testimonials__item:nth-child(odd) .user-img{
-    float: left;
-    margin-right:2rem;
-    margin-bottom: .4rem;
-}
-
-.user-name{
-    font: normal normal 600 1.4rem var(--main-font, Arial);
-    text-decoration: underline;
-    margin-bottom: .3rem;
-}
-
-.testimony{
-    grid-area: paragraph;
-    font: normal normal 400 1.2rem var(--main-font, Arial);
-    text-align: justify;
-}
-
-.testimonials__item:nth-child(1){ 
-    grid-area: large1;
-}
-.testimonials__item:nth-child(2){ 
-    grid-area: short1;
-}
-.testimonials__item:nth-child(3){ 
-    grid-area: short2;
-}
-.testimonials__item:nth-child(4){ 
-    grid-area: short3;
-}
-.testimonials__item:nth-child(5){ 
-    grid-area: large2;
-}
-
-@media (width > 500px){
-    .testimonials-section{ padding: 0 1rem; }
-    .testimonials{
-        grid-template-areas: 
-        "large1 short1" 
-        "short2 short3" 
-        "large2 large2" 
-        ;
-    }
-}
-
-@media (width > 768px){
-    .testimonials-section{ padding: 0 5rem; }   
-
-    .testimonials{
-        grid-template-areas: 
-        "large1 large1 large1" 
-        "short1 short2 short3" 
-        "large2 large2 large2" 
-        ;
-    }
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 </style>

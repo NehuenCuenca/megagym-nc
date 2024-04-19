@@ -1,0 +1,122 @@
+---
+import { Image } from "astro:assets";
+const { testimonies } = Astro.props
+---
+
+<div class="slider">
+    <div class="slide-track">
+        {
+            testimonies.map((testimony) => (
+                <article class="slide testimonials__item">
+                    <div class="testimonials__item-header">
+                        <Image src={testimony.memberImage} alt="Foto de socio" class="user-img" width={100} height={100} loading="lazy" />
+                    </div>
+                    <p class="testimony">{testimony.testimonyText}</p>
+                </article>
+            ))
+        } 
+        {
+            testimonies.map((testimony) => (
+                <article class="slide testimonials__item">
+                    <div class="testimonials__item-header">
+                        <Image src={testimony.memberImage} alt="Foto de socio" class="user-img" width={100} height={100} loading="lazy" />
+                    </div>
+                    <p class="testimony">{testimony.testimonyText}</p>
+                </article>
+            ))
+        } 
+    </div>
+</div>
+
+<style>
+.slider {
+    background: transparent;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.slider::before, .slider::after {
+    background: linear-gradient(to right, var(--color-bg) 0%, rgba(255, 255, 255, 0) 100%);
+    content: "";
+    height: 100%;
+    position: absolute;
+    width: 30px;
+    z-index: 2;
+}
+
+.slider::after {
+    right: 0;
+    top: 0;
+    -webkit-transform: rotateZ(180deg);
+    transform: rotateZ(180deg);
+}
+
+.slider::before {
+    left: 0;
+    top: 0;
+}
+
+.slider .slide-track {
+    animation: scroll 50s linear infinite;
+    padding: 1rem 0;
+    display: flex;
+    width: calc((300px * 5)); /* (imageWidth+columnGap) * DOMquantitySponsors */
+    column-gap: 50px;
+}
+
+.slider .slide {
+    height: auto;
+    width: 150px;
+    object-fit: contain;
+    filter: drop-shadow(5px 5px 5px rgba(0,0,0, 0.4));
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* (imageWidth+columnGap * quantitySponsors */
+        transform: translateX(calc(-300px * 5)); 
+    }
+}
+
+.testimonials__item{
+    min-width: 250px;
+    border-radius: 6px;
+    background-color: var(--off-white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.testimonials__item-header{
+    width: 100%;
+    padding: 1.5rem 0;
+    background-color: var(--grey-dark);
+    border-radius: 6px 6px 0 0;
+    border-bottom: 5px solid var(--gold);
+}
+
+.user-img{
+    margin: 0 auto;
+    background-color: var(--grey-soft);
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    -webkit-shape-outside:circle();
+    shape-outside:circle();
+}
+
+.testimony{
+    background-color: var(--false-black);
+    color: var(--white);
+    padding: 1.5rem ;
+    text-align: justify;
+    border-radius: 0 0 6px 6px;
+    font: normal normal 100 1.2rem var(--default-font)
+}
+
+</style>
