@@ -10,8 +10,8 @@
     box-shadow: 2px 2px 20px var(--color-shadow);
 }
 
-a[href="#principal"]{
-    margin:  0 auto 0 0;
+.navbar a[href="#principal"]{
+    margin: 0 auto 0 0;
 }
 
 .navbar__logo-megagym{

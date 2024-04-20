@@ -6,25 +6,25 @@ import logoMegaGym from "@assets/logos/logo-mega-gym.webp";
 ---
 
 <footer class="footer-container">
-  <a href="#principal">
-    <Image
-      src={logoMegaGym}
-      class="footer__logo-megagym"
-      width={70}
-      height={70}
-      alt="Logo de MegaGym"
-      loading="lazy"
-    />
-  </a>
+  
   <div class="social">
-    <h3 class="title">Redes</h3>
+    <a href="#principal">
+      <Image
+        src={logoMegaGym}
+        class="footer__logo-megagym"
+        width={70}
+        height={70}
+        alt="Logo de MegaGym"
+        loading="lazy"
+      />
+    </a>
     <div class="social__links">
       <a
         class="social__link"
         href="https://www.facebook.com/megagymgchu"
         target="_blank"
       >
-        <Icon name="mdi:facebook" size={40} title="Facebook"/>
+        <Icon name="mdi:facebook" size={35} title="Facebook"/>
       </a>
 
       <a
@@ -32,11 +32,11 @@ import logoMegaGym from "@assets/logos/logo-mega-gym.webp";
         href="https://www.instagram.com/megagymgchu/"
         target="_blank"
       >
-        <Icon name="mdi:instagram" size={40} title="Instagram"/>
+        <Icon name="mdi:instagram" size={35} title="Instagram"/>
       </a>
 
       <a class="social__link" href="mailto:megagymgchu@gmail.com">
-        <Icon name="mdi:gmail" size={40} title="Gmail"/>
+        <Icon name="mdi:gmail" size={35} title="Gmail"/>
       </a>
     </div>
   </div>
@@ -45,19 +45,28 @@ import logoMegaGym from "@assets/logos/logo-mega-gym.webp";
 
 <style>
   .footer-container {
+    margin-top: 5rem;
     padding: 1rem 2rem;
-    background-color: var(--secondary-yellow);
+    border-top: 5px solid var(--gold);
+    background-color: var(--false-black);
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: .5rem 3rem;
-    color: var(--false-black);
+    color: var(--white);
   }
 
   .title {
     font: normal normal 600 1.5rem var(--main-font, Arial);
     text-decoration: underline;
     text-align: center;
+  }
+
+  .social{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
   }
 
   .social__links {
@@ -69,13 +78,14 @@ import logoMegaGym from "@assets/logos/logo-mega-gym.webp";
 
   .social__link {
     text-decoration: none;
-    color: var(--false-black);
+    color: var(--white);
     cursor: pointer;
   }
 
-  .signature { 
+  .signature {
+    margin-top: 2rem; 
     width: max-content;
-    color: var(--false-black); 
+    color: var(--grey-soft); 
   }
 
   @media (width >= 768px) {
@@ -83,6 +93,6 @@ import logoMegaGym from "@assets/logos/logo-mega-gym.webp";
     .social__links { justify-content: flex-start; }
 
     .title { text-align: start; }
-    .signature { margin: 0 0 0 auto; }
+    .signature { margin: auto 0 0 auto; }
   }
 </style>
