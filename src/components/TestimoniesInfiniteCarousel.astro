@@ -65,6 +65,10 @@ const { testimonies } = Astro.props
     column-gap: 50px;
 }
 
+.slider .slide-track:hover {
+    animation-play-state: paused;
+}
+
 .slider .slide {
     height: auto;
     width: 150px;
@@ -117,6 +121,12 @@ const { testimonies } = Astro.props
     text-align: justify;
     border-radius: 0 0 6px 6px;
     font: normal normal 100 1.2rem var(--default-font)
+}
+
+@media (width >= 425px) {
+    .slider .slide-track:hover {
+        animation-play-state: inherit;
+    }
 }
 
 </style>
