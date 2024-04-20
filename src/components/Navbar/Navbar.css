@@ -128,7 +128,7 @@ a, .navbar__logo-megagym, .hamburguer-menu, .toggle-theme {
     flex-direction: column;
     align-items: center;
     row-gap: 1rem;
-    background-color: var(--color-font);
+    background-color: var(--false-black);
     padding: 1rem;
     border-radius: 6px;
     border: 6px solid var(--gold);
@@ -136,7 +136,7 @@ a, .navbar__logo-megagym, .hamburguer-menu, .toggle-theme {
 
 .link_mobile {
     text-decoration: none;
-    font: normal normal 600 1.4rem var(--main-font, Arial);
+    font: normal normal 600 1.4rem var(--default-font, Arial);
     color: var(--white);
 }
 

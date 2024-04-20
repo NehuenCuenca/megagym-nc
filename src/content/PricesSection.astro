@@ -85,10 +85,10 @@ import { Icon } from "astro-icon/components";
             </table>
         </li>
     </ul>
-    <button class="contact-whatsapp">
+    <a href="tel:54 9 3446 670344" class="contact-whatsapp">
       <span class="contact-whatsapp__text">Consultar por WhatsApp</span> 
       <Icon class="contact-whatsapp__icon" name="mdi:whatsapp" size={30} />
-    </button>
+    </a>
 </section>
 <style>
   .prices-section { 
@@ -154,9 +154,9 @@ import { Icon } from "astro-icon/components";
     border-bottom: 2px solid var(--gold);
   }
 
-  .prices-list__item:nth-child(2){
+  .prices-list__item:hover{
     background: rgb(75,75,75);
-    background: linear-gradient(130deg, rgba(75,75,75,1) 5%, rgba(28,28,27,1) 50%, rgba(75,75,75,1) 95%);
+    background: linear-gradient(130deg, rgba(50,50,50,1) 5%, rgba(28,28,27,1) 50%, rgba(50,50,50,1) 95%);
   }
 
   .contact-whatsapp{
@@ -175,7 +175,8 @@ import { Icon } from "astro-icon/components";
     flex-wrap: wrap;
     padding: 1rem .5rem;
     gap: .5rem;
-    transition: color .3s ease;
+    text-decoration: none;
+    transition: color .5s ease;
   }
   
   .contact-whatsapp:hover, :has(.prices-list__item:hover) .contact-whatsapp{
