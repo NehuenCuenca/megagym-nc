@@ -2,17 +2,23 @@
 
 ---
 <section class="about-us-section" id="nosotros">
-    <h2 class="about-us-section__title">Sobre nosotros 🤓</h2>
-    <div class="schedules">
-        <u>Horarios de atención: </u>
-        <p>Lun a Vie de 7 a 23 Hs. Sábados de 8 a 15 Hs.</p>
-    </div>
-    <div class="contact">
-        <u>Consultanos al: </u>
-        <p>+54 9 3446 670344 o en Clavarino 876 (Entre Fray Mocho y Seguí).</p>
-    </div>
-    <div class="google-map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3346.0641800807566!2d-58.519627025265414!3d-33.00208337357043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95baa827d0b53203%3A0xcc811859434b0529!2sMega%20Gym!5e0!3m2!1ses!2sar!4v1711374058899!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" title="Ubicacion: Clavarino 876 (Entre Fray Mocho y Seguí)" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <h2 class="about-us-section__title">Sobre nosotros</h2>
+    <div class="info">
+        <div class="info__schedules">
+            <u>Horarios de atención: </u>
+            <p>Lun a Vie de 7 a 23 Hs. Sábados de 8 a 15 Hs.</p>
+        </div>
+        <div class="info__ubication">
+            <u>Podés acercarte a: </u>
+            <p>Clavarino 876 (Entre Fray Mocho y Seguí).</p>
+        </div>
+        <div class="info__contact">
+            <u>O consultanos al: </u>
+            <p>+54 9 3446 670344</p>
+        </div>
+        <div class="info__google-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3346.0641800807566!2d-58.519627025265414!3d-33.00208337357043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95baa827d0b53203%3A0xcc811859434b0529!2sMega%20Gym!5e0!3m2!1ses!2sar!4v1711374058899!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" title="Ubicacion: Clavarino 876 (Entre Fray Mocho y Seguí)" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
     </div>
 </section>
 
@@ -25,33 +31,68 @@
         gap: 1.5rem;
     }
     .about-us-section__title{
+        font: normal normal 800 clamp(2.8rem, 5vw, 5rem) var(--logo-font, Arial);
         text-align: center;
-        font: normal normal 800 2rem var(--main-font, Arial);
-        text-decoration: underline;
+        text-transform: uppercase;
     }
 
-    .schedules, .contact {
-        font: normal normal 400 1.6rem var(--main-font, Arial);
+    .info{
+        width: 90%;
+        display: grid;
+        gap: 1rem;
+        grid-template-areas: 
+        "schedules"
+        "ubication"
+        "contact"
+        "map"
+        ;
+        place-items: center;
     }
-    :is(.schedules, .contact) {
+    .info__schedules{ grid-area: schedules;}
+    .info__contact{ grid-area: contact;}
+    .info__ubication {grid-area: ubication;}
+
+    .info__schedules, .info__contact, .info__ubication {
+        font: normal normal 300 1.6rem var(--default-font, Arial);
+    }
+    :is(.info__schedules, .info__contact, .info__ubication) {
         text-align: center;
     }
-    :is(.schedules, .contact) p {
-        font: normal normal 600 1.5rem var(--main-font, Arial);
+    :is(.info__schedules, .info__contact, .info__ubication) p {
+        font: normal normal 800 1.5rem var(--default-font, Arial);
     }
     
-    .google-map {
-        width: 80%;
+    .info__google-map {
+        grid-area: map;
+        width: 100%;
+        min-height: 300px;
         padding-bottom: 50%;
         position: relative;
     }
 
-    .google-map iframe {
+    .info__google-map iframe {
         height: 100%;
         width: 100%;
         left: 0;
         top: 0;
         position: absolute;
-        box-shadow: 5px 5px 25px var(--color-shadow);
+        box-shadow: 5px 5px 10px rgba(0,0,0, 0.4);
     }
-    </style>
+
+    @media (width >= 768px) {
+        .info{
+            grid-template-columns: .5fr .8fr;
+            grid-template-areas: 
+            "schedules map"
+            "ubication map"
+            "contact map"
+            ;
+        }
+        
+        .info__schedules, .info__contact, .info__ubication {
+            place-self: start;
+            text-align: start;
+        }
+        
+    }
+</style>
