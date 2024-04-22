@@ -58,7 +58,7 @@ const { testimonies } = Astro.props
 }
 
 .slider .slide-track {
-    animation: scroll 50s linear infinite;
+    animation: testimonialsScroll 50s linear infinite;
     padding: 1rem 0;
     display: flex;
     width: calc((300px * 5)); /* (imageWidth+columnGap) * DOMquantitySponsors */
@@ -76,7 +76,7 @@ const { testimonies } = Astro.props
     filter: drop-shadow(5px 5px 5px var(--color-shadow));
 }
 
-@keyframes scroll {
+@keyframes testimonialsScroll {
     0% {
         transform: translateX(0);
     }

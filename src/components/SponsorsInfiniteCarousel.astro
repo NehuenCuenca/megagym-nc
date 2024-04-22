@@ -48,7 +48,7 @@ const { images, sizes } = Astro.props
 }
 
 .slider .slide-track {
-    animation: scroll 15s linear infinite;
+    animation: sponsorsScroll 15s linear infinite;
     padding: 1rem 0;
     display: flex;
     width: calc((160px * 18)); /* (imageWidth+columnGap) * DOMquantitySponsors */
@@ -66,13 +66,13 @@ const { images, sizes } = Astro.props
     filter: drop-shadow(5px 5px 5px var(--color-shadow));
 }
 
-@keyframes scroll {
+@keyframes sponsorsScroll {
     0% {
-        transform: translateX(0);
+        transform: translateX(calc(-160px * 9));
     }
     100% {
         /* (imageWidth+columnGap * quantitySponsors */
-        transform: translateX(calc(-160px * 9)); 
+        transform: translateX( 0); 
     }
 }
 </style>
